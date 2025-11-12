@@ -370,10 +370,11 @@ export const faqs = [
 ];
 
 export const contactDetails = {
-  address: "Plot C-28, Sector 8, Rohini, Delhi - 110085",
+  address:
+    "1-1-259/138, Srinivasa Nagar Colony, beside Max Show Room, Brindavan Colony, Kapra, Secunderabad, Telangana 500062, India",
   phonePrimary: "+91 70137 94781",
   phoneSecondary: "+91 70137 94781",
-  email: "hello@karthikeyaconstructions.com",
+  email: "kaarthikeyaaconstructions@gmail.com",
   workHours: "Mon to Sat - 9:00 AM to 7:00 PM",
 };
 

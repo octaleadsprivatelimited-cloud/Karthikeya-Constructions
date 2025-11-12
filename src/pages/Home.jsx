@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import StatsStrip from "../components/StatsStrip";
 import TestimonialSlider from "../components/TestimonialSlider";
-import { services, materialExpertise, ethos } from "../data/siteContent";
+import { services, materialExpertise, ethos, contactDetails } from "../data/siteContent";
 import useInViewAnimation from "../hooks/useInViewAnimation";
 
 const heroHighlights = [
@@ -824,7 +824,7 @@ const Home = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:hello@karthikeyaconstructions.com"
+              href={`mailto:${contactDetails.email}`}
               className="rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand-accent hover:text-white"
             >
               Mail Our Team
