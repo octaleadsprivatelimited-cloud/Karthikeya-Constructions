@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Karthikeya Constructions – React Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive rebuild of **Shree Constructions Interior** reimagined for **Karthikeya Constructions**. The site showcases turnkey construction and interior design services with immersive visuals, smooth interactions, and a full set of marketing pages.
 
-## Available Scripts
+## ✨ Highlights
 
-In the project directory, you can run:
+- Hero landing page with CTA-driven messaging and smooth scrolling
+- Service listing with animated cards and value highlights
+- Project and testimonial sliders powered by `react-slick`
+- Gallery grid with hover overlays for project storytelling
+- About, Services, Gallery, and Contact inner pages for complete coverage
+- Tailwind CSS theming, custom fonts, and responsive layouts
+- Contact form wired to Formspree (update the endpoint to go live)
 
-### `npm start`
+## 🛠 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React 19](https://react.dev/)
+- [Create React App](https://create-react-app.dev/)
+- [React Router v7](https://reactrouter.com/)
+- [Tailwind CSS 3](https://tailwindcss.com/)
+- [React Slick](https://react-slick.neostack.com/) + `slick-carousel`
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Scroll](https://www.npmjs.com/package/react-scroll)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+```bash
+git clone <repository-url>
+cd karthikeya-constructions
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app runs at `http://localhost:3000/`. Hot reload is enabled by default.
 
-### `npm run build`
+## 📜 Available Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start      # Start development server
+npm run build  # Create production build in /build
+npm test       # Run unit tests (press Enter once to trigger when prompted)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **Tip:** If `npm test` waits for input, press `Enter` once or set the environment variable `CI=true` before running the command.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📂 Project Structure
 
-### `npm run eject`
+```
+src/
+├─ components/         # Shared UI components (navigation, sliders, cards, forms)
+├─ data/               # Centralised site content & configuration
+├─ pages/              # Route-level pages (Home, About, Services, Gallery, Contact)
+├─ index.js            # Entry point with global styles and Slick CSS imports
+├─ index.css           # Tailwind directives + global tweaks
+└─ App.js              # Router setup and layout composition
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Tailwind is configured via `tailwind.config.js` with custom brand colours, typography, and shadows matching the reference design.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✉️ Contact Form Integration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The contact form currently posts to a demo Formspree endpoint defined in `src/components/ContactForm.jsx`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Create your own form at [Formspree.io](https://formspree.io/).
+2. Replace `FORMSPREE_ENDPOINT` with the generated form URL.
+3. Optionally add spam protection (honeypot or reCAPTCHA) before going live.
 
-## Learn More
+## 🌐 Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Netlify:** Connect the repo, set **Build command** to `npm run build`, and **Publish directory** to `build/`.
+- **Vercel:** Import the project, keep the default CRA settings. Vercel auto-detects.
+- **Static hosting:** Run `npm run build` and upload the contents of `build/` to any static host (S3, Azure Blob, Firebase, etc.).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Remember to configure a custom domain, enable HTTPS, and set up redirects if required.
 
-### Code Splitting
+## ✅ QA Checklist
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [x] Build compiles without errors (`npm run build`)
+- [x] Routing verified for Home / About / Services / Gallery / Contact
+- [x] Slick sliders functional on desktop and mobile breakpoints
+- [x] Responsive layouts validated across widths (320px → 1440px)
+- [x] Contact form ready for integration (pending real endpoint)
 
-### Analyzing the Bundle Size
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is provided as a bespoke implementation for Karthikeya Constructions. Feel free to adapt and extend for internal use.
