@@ -34,6 +34,9 @@ const Contact = () => {
     },
   ];
 
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactDetails.address)}`;
+  const googleMapsEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(contactDetails.address)}&output=embed`;
+
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -135,7 +138,16 @@ const Contact = () => {
                     icon: <FaMapMarkerAlt />,
                     title: "Studio",
                     content: (
-                      <p className="mt-2 text-sm text-brand/70">{contactDetails.address}</p>
+                      <p className="mt-2 text-sm text-brand/70">
+                        <a
+                          href={googleMapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand hover:text-brand-accent underline-offset-4 hover:underline"
+                        >
+                          {contactDetails.address}
+                        </a>
+                      </p>
                     ),
                   },
                   {
@@ -183,13 +195,13 @@ const Contact = () => {
           <div className="rounded-3xl border border-white/12 bg-white/5 px-6 py-12 shadow-[0_26px_65px_rgba(10,32,51,0.45)] backdrop-blur md:px-10">
             <SectionHeading
               eyebrow="Visit Us"
-              title="Our studio is located in the heart of Hyderabad’s business district."
+              title="Our studio is located in the heart of Secunderabad."
               tone="dark"
             />
             <div className="mt-8 overflow-hidden rounded-3xl border border-white/15">
               <iframe
                 title="Karthikeya Constructions"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.185868046653!2d78.38221717512947!3d17.447753083459066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93db3e955555%3A0x8187135f35d08c4b!2sHitech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1706960479353!5m2!1sen!2sin"
+                src={googleMapsEmbedSrc}
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
