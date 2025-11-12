@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
-import ServiceCard from "../components/ServiceCard";
 import ProjectShowcase from "../components/ProjectShowcase";
 import TestimonialSlider from "../components/TestimonialSlider";
 import { services, materialExpertise, brandPartners, contactDetails } from "../data/siteContent";

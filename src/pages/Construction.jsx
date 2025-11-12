@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
-import ServiceCard from "../components/ServiceCard";
 import StatsStrip from "../components/StatsStrip";
 import ProjectShowcase from "../components/ProjectShowcase";
 import { services, brandPartners, roadmap, contactDetails } from "../data/siteContent";
