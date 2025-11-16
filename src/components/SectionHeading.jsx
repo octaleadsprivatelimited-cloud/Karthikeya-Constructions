@@ -7,9 +7,14 @@ const SectionHeading = ({
 }) => {
   const alignment = align === "left" ? "text-left" : "text-center";
   const eyebrowColor =
-    tone === "dark" ? "text-brand-accent" : "text-brand-accent";
-  const titleColor = tone === "dark" ? "text-white" : "text-brand";
-  const descriptionColor = tone === "dark" ? "text-white/70" : "text-brand/70";
+    tone === "dark"
+      ? "text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-[#7ab8ff] drop-shadow-[0_4px_18px_rgba(5,14,27,0.45)]"
+      : "text-brand-accent";
+  const titleColor =
+    tone === "dark"
+      ? "text-transparent bg-clip-text bg-gradient-to-r from-white via-[#f7d9a0] to-[#7ab8ff]"
+      : "text-brand";
+  const descriptionColor = tone === "dark" ? "text-white/80" : "text-brand/70";
 
   return (
     <div className={`mx-auto mb-10 max-w-3xl ${alignment}`}>
