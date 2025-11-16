@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import ProjectShowcase from "../components/ProjectShowcase";
@@ -50,6 +51,12 @@ const Interior = () => {
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
+      <SEO
+        title="Interior Design"
+        description="End-to-end interior design and execution—material curation, bespoke joinery, lighting, and styling."
+        keywords={["interior design", "joinery", "lighting", "styling", "residential interiors", "commercial interiors"]}
+        image="/images/hero-whatsapp.jpg"
+      />
       <div className="absolute inset-0 -z-10">
         <img
           src={backgroundImage}

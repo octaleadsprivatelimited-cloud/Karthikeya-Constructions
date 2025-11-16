@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import ProjectShowcase from "../components/ProjectShowcase";
@@ -60,6 +61,12 @@ const Gallery = () => {
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
+      <SEO
+        title="Gallery"
+        description="Explore our gallery—residences, workplaces, and hospitality environments crafted by our experience-led pods."
+        keywords={["gallery", "projects", "portfolio", "residential", "commercial", "hospitality"]}
+        image="/images/hero-whatsapp.jpg"
+      />
       <div className="absolute inset-0 -z-10">
         <img
           src={backgroundImage}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import StatsStrip from "../components/StatsStrip";
 import TestimonialSlider from "../components/TestimonialSlider";
@@ -127,6 +128,22 @@ const Home = () => {
 
   return (
     <main className="bg-[#f4f6fb] text-brand">
+      <SEO
+        title="Home"
+        description="Premium residential and commercial construction, interiors, renovation, and governance—delivered with precision across India."
+        keywords={[
+          "construction",
+          "residential construction",
+          "commercial construction",
+          "turnkey",
+          "interiors",
+          "renovation",
+          "Hyderabad",
+          "Bengaluru",
+          "India",
+        ]}
+        image="/images/hero-whatsapp.jpg"
+      />
       {/* Hero */}
       <section className="fade-up relative isolate overflow-hidden border-b border-white/10 bg-[#030b1a] text-white shadow-[0_25px_90px_rgba(5,12,34,0.35)]">
           <img

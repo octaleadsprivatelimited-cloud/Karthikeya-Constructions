@@ -1,4 +1,5 @@
 import PageHero from "../components/PageHero";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import ContactForm from "../components/ContactForm";
 import { contactDetails } from "../data/siteContent";
@@ -39,6 +40,12 @@ const Contact = () => {
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
+      <SEO
+        title="Contact"
+        description="Contact Karthikeya Constructions for consultations, proposals, and site visits."
+        keywords={["contact", "consultation", "proposal", "site visit", "phone", "email"]}
+        image="/images/hero-whatsapp.jpg"
+      />
       <div className="absolute inset-0 -z-10">
         <img
           src={backgroundImage}

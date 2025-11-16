@@ -1,4 +1,5 @@
 import PageHero from "../components/PageHero";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data/siteContent";
@@ -37,6 +38,11 @@ const addOnServices = [
 const Services = () => {
   return (
     <div className="space-y-24">
+      <SEO
+        title="Services"
+        description="Residential turnkey, commercial projects, renovation, design management, and governance—tailored to your goals."
+        keywords={["services", "turnkey", "renovation", "commercial", "residential", "design management"]}
+      />
       <PageHero
         title="Services & Capabilities"
         description="Complete design-build solutions covering architecture, interiors, civil contracting, and smart amenities."

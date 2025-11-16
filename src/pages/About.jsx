@@ -1,4 +1,5 @@
 import PageHero from "../components/PageHero";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import StatsStrip from "../components/StatsStrip";
 import { ethos } from "../data/siteContent";
@@ -52,6 +53,12 @@ const About = () => {
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
+      <SEO
+        title="About Us"
+        description="Learn about Karthikeya Constructions—our values, multidisciplinary teams, and mission to deliver landmark spaces."
+        keywords={["about", "construction company", "values", "team", "mission"]}
+        image="/images/hero-whatsapp.jpg"
+      />
       <div className="absolute inset-0 -z-10">
         <img
           src="https://images.unsplash.com/photo-1529429617124-aee411a31775?auto=format&fit=crop&w=2000&q=80"
