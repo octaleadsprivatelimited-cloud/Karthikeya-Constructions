@@ -120,7 +120,18 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-white/60 md:flex-row md:px-8">
           <p>© {currentYear} Karthikeya Constructions. All rights reserved.</p>
-          <p>Designed by Octaleads Private Limited.</p>
+          <p>
+            Designed by{" "}
+            <a
+              href="https://www.octaleads.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-brand-accent transition hover:text-white hover:underline"
+            >
+              Octaleads Private Limited
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

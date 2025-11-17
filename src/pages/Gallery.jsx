@@ -51,6 +51,36 @@ const galleryImages = [
     description: "Timber deck with pergola, planters, and acoustic privacy screens.",
     image: "/images/outdoor-deck.avif",
   },
+  {
+    title: "Modern Living Space",
+    description: "Contemporary living area with elegant furnishings and sophisticated design.",
+    image: "/images/gallery-copy3.jpg",
+  },
+  {
+    title: "Luxury Interior Design",
+    description: "Premium interior showcasing refined aesthetics and premium materials.",
+    image: "/images/gallery-copy2.jpg",
+  },
+  {
+    title: "Elegant Residential Design",
+    description: "Sophisticated residential space with modern amenities and timeless appeal.",
+    image: "/images/gallery-copy1.jpg",
+  },
+  {
+    title: "Premium Construction Project",
+    description: "High-quality construction work demonstrating precision and craftsmanship.",
+    image: "/images/gallery-whatsapp-1.jpg",
+  },
+  {
+    title: "Excellence in Building",
+    description: "Showcasing our commitment to quality construction and attention to detail.",
+    image: "/images/gallery-whatsapp-2.jpg",
+  },
+  {
+    title: "Professional Construction",
+    description: "Expert construction services delivering superior results and client satisfaction.",
+    image: "/images/gallery-whatsapp-3.jpg",
+  },
 ];
 
 const backgroundImage =
