@@ -57,8 +57,8 @@ const galleryImages = [
     image: "/images/gallery-copy3.jpg",
   },
   {
-    title: "Luxury Interior Design",
-    description: "Premium interior showcasing refined aesthetics and premium materials.",
+    title: "Modern Architectural Exterior",
+    description: "Contemporary building facade with sleek vertical slats and premium materials.",
     image: "/images/gallery-copy2.jpg",
   },
   {
