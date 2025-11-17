@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
-import StatsStrip from "../components/StatsStrip";
 import TestimonialSlider from "../components/TestimonialSlider";
 import useInViewAnimation from "../hooks/useInViewAnimation";
 
@@ -21,159 +20,154 @@ const heroStats = [
   { value: "30+", label: "Cities Served" },
 ];
 
-const aboutHighlights = [
+const aboutPillars = [
   {
-    title: "Human-Centred Strategy",
-    description: "Insight workshops translate your brand, lifestyle, and compliance cues into a live brief.",
+    title: "Industrial construction responsibility",
+    description: "We treat every industrial build with rigorous safety systems, quality benchmarks, and transparent reporting.",
   },
   {
-    title: "Detail-Driven Execution",
-    description: "Dedicated pods for civil, MEP, automation, and styling keep every sprint accountable.",
+    title: "Grow your building",
+    description: "Factory-fit solutions, expansion pods, and compliant infrastructure that keep your operations future ready.",
   },
   {
-    title: "Transparent Governance",
-    description: "Weekly dashboards, quantified QA, and milestone sign-offs ensure total clarity.",
+    title: "Get construction help",
+    description: "Dedicated project managers ensure you receive the workmanship, communication, and timelines you expect.",
   },
 ];
 
-const serviceTiles = [
+const serviceCatalog = [
   {
     icon: "🏗️",
-    title: "Residential Turnkey",
-    description: "Apartments, villas, and townships with bespoke interiors, smart automation, and vastu-aligned layouts.",
-    points: ["Concept-to-handover", "Material curation", "White-glove styling"],
+    title: "Building Constructions",
+    description: "From residential villas to corporate offices, we engineer structures with durability and design finesse.",
   },
   {
-    icon: "🏢",
-    title: "Commercial & Corporate",
-    description: "Hybrid workspaces and HQs engineered for productivity with branded storytelling and tech integration.",
-    points: ["Agile pods", "Acoustics & AV", "Change management"],
+    icon: "📐",
+    title: "Architectural Design",
+    description: "Creative concepts balanced with functionality, compliance, and brand storytelling.",
   },
   {
-    icon: "🏥",
-    title: "Hospitality & Wellness",
-    description: "Boutique hotels, clubs, and wellness centres balancing luxury finishes with operational rigour.",
-    points: ["Guest experience labs", "Lighting strategy", "Rapid refurb cycles"],
+    icon: "🛋️",
+    title: "Interiors",
+    description: "Warm, functional interiors that mirror your personality while optimising layouts and storage.",
   },
   {
-    icon: "🛠️",
-    title: "Renovation & Retrofits",
-    description: "Structural optimisation, façade upgrades, and adaptive reuse for legacy assets.",
-    points: ["Engineering audits", "Permitting support", "On-going maintenance"],
+    icon: "🧭",
+    title: "PMC (Project Management Consultancy)",
+    description: "End-to-end governance with cost controls, scheduling, and vendor coordination.",
   },
   {
-    icon: "🌐",
-    title: "Design Management",
-    description: "Architectural, interior, and MEP design stewardship with BIM coordination.",
-    points: ["Multi-disciplinary team", "Vendor alignment", "Digital twins"],
+    icon: "⚙️",
+    title: "Engineering & Contracting",
+    description: "Experienced engineers and contractors working in sync to deliver uncompromised quality on-site.",
   },
   {
-    icon: "📊",
-    title: "Project Governance",
-    description: "Owner’s representation, cost control, and schedule assurance for investor confidence.",
-    points: ["Risk registers", "Value engineering", "Post-occupancy review"],
+    icon: "🧱",
+    title: "Renovation & Remodeling",
+    description: "Reimagine legacy properties with structural upgrades, new services, and contemporary finishes.",
   },
 ];
 
-const constructionFocus = [
+const constructionPackages = [
   {
-    title: "Residential Superstructures",
-    description:
-      "End-to-end RCC frames, post-tension slabs, and façade envelopes for villas, gated communities, and luxury towers with vastu-safe orientation and MEP coordination baked in.",
-    highlights: ["High-rise concrete cores", "Premium villa clusters", "Adaptive reuse & extensions"],
+    tier: "Premium Signature Package",
+    price: "Rs. 2,249/sq.ft",
+    inclusions: [
+      "M-Sand aggregates + FE500/FE550D steel",
+      "Bathroom wall tiles up to Rs.80/sq.ft",
+      "Internal flooring up to Rs.120/sq.ft",
+      "Havells/GM switches with Polycab wiring",
+      "Sanitary fittings worth Rs.40,000 per bathroom",
+    ],
   },
   {
-    title: "Commercial & Institutional",
-    description:
-      "Corporate HQs, retail streets, and hospitality assets executed with fast-track structural systems, acoustic separation, and compliance-ready services shafts.",
-    highlights: ["Hybrid office campuses", "Hospitality podiums", "Retail & experiential hubs"],
+    tier: "Elite Comfort Package",
+    price: "Rs. 2,149/sq.ft",
+    inclusions: [
+      "Premium kitchen sink up to Rs.10,000",
+      "Bathroom wall tiles up to Rs.60/sq.ft",
+      "Internal flooring up to Rs.100/sq.ft",
+      "Burma Border / Red Sal main door",
+      "CPVC/UPVC by Ashirwad & Supreme",
+    ],
   },
   {
-    title: "Industrial & Logistics",
-    description:
-      "Large-span PEB sheds, automated warehouses, and utility plants engineered for load efficiency, fire compliance, and rapid erection cycles.",
-    highlights: ["PEB + RCC hybrids", "Cold storage & logistics", "Utility & infra corridors"],
+    tier: "Smart Value Package",
+    price: "Rs. 1,949/sq.ft",
+    inclusions: [
+      "Bathroom wall tiles up to Rs.55/sq.ft",
+      "Parking tiles up to Rs.50/sq.ft",
+      "Staircase flooring up to Rs.70/sq.ft",
+      "Main door in Burma Border / WPC",
+      "Sanitary fittings worth Rs.20,000 per bathroom",
+    ],
   },
   {
-    title: "Program Governance",
-    description:
-      "Dedicated PMC pods that run cost, safety, and quality controls across multiple job sites with BIM coordination and live production dashboards.",
-    highlights: ["Owner’s representation", "Digital QA/QC", "Integrated contractor interfaces"],
-  },
-];
-
-const constructionGallery = [
-  {
-    src: "/images/construction-premium.avif",
-    alt: "Premium residential tower under construction",
-  },
-  {
-    src: "/images/construction-site-1.avif",
-    alt: "Engineers inspecting reinforced concrete columns",
-  },
-  {
-    src: "/images/construction-site-2.avif",
-    alt: "Steel structure framework being assembled on site",
-  },
-  {
-    src: "/images/construction-site-3.avif",
-    alt: "Night-time concrete pour for high-rise deck",
-  },
-];
-
-const projectShowcase = [
-  {
-    title: "Skyline Grand Residences",
-    segment: "Residential",
-    location: "Hyderabad",
-    timeline: "16 Weeks",
-    outcome: "Delivered 12,000 sq ft duplex with custom veneers, Italian stone, and smart automation.",
-    image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Innovation HQ",
-    segment: "Commercial",
-    location: "Bengaluru",
-    timeline: "14 Weeks",
-    outcome: "50,000 sq ft hybrid office with biophilic pods, acoustic strategy, and branded experience spine.",
-    image: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Aurora Wellness Retreat",
-    segment: "Hospitality",
-    location: "Goa",
-    timeline: "18 Weeks",
-    outcome: "Immersive spa suites, sculpted courtyards, and energy-efficient climate mesh.",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Legacy Tower Retrofit",
-    segment: "Renovation",
-    location: "Chennai",
-    timeline: "10 Weeks",
-    outcome: "Façade refresh, structural optimisation, and premium lobby with metallic accents.",
-    image: "https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?auto=format&fit=crop&w=1200&q=80",
+    tier: "Essential Starter Package",
+    price: "Rs. 1,749/sq.ft",
+    inclusions: [
+      "Bathroom wall tiles up to Rs.40/sq.ft",
+      "Internal flooring up to Rs.50/sq.ft",
+      "Ghana Teak / Neem wood main door",
+      "Hi-Fi / GM switches with Maharaja wiring",
+      "Sanitary fittings worth Rs.15,000 per bathroom",
+    ],
   },
 ];
 
-const credibilityBadges = [
-  "Trusted by 120+ developers",
-  "Dedicated safety officers",
-  "Material labs & mock-up studio",
-  "24/7 site monitoring",
+const whyChooseReasons = [
+  "Uncompromising construction quality & detailing",
+  "Experienced architects, engineers, and designers",
+  "Tailored solutions for every lifestyle and plot",
+  "Projects delivered on schedule with crystal-clear updates",
+  "Transparent communication and documentation",
 ];
 
-const callToAction = {
-  headline: "Ready to build your next landmark?",
-  subtext:
-    "Book a free consultation to discuss timelines, budgets, and experience goals with our core team.",
-};
+const achievements = [
+  { label: "Projects Completed", value: "150+" },
+  { label: "Happy Clients", value: "300+" },
+  { label: "Years of Experience", value: "12+" },
+  { label: "Expert Professionals", value: "80+" },
+];
+
+const galleryHighlights = [
+  {
+    title: "Luxury Living Area",
+    image: "/images/gallery-copy3.jpg",
+    category: "Residential",
+  },
+  {
+    title: "Corporate Collaboration Hub",
+    image: "/images/gallery-copy2.jpg",
+    category: "Commercial",
+  },
+  {
+    title: "Signature Villa Frontage",
+    image: "/images/gallery-copy1.jpg",
+    category: "Premium Villas",
+  },
+  {
+    title: "Contemporary Workspace",
+    image: "/images/gallery-whatsapp-1.jpg",
+    category: "Office Interiors",
+  },
+  {
+    title: "Showroom Experience",
+    image: "/images/gallery-whatsapp-2.jpg",
+    category: "Retail",
+  },
+  {
+    title: "Hospitality Lounge",
+    image: "/images/gallery-whatsapp-3.jpg",
+    category: "Hospitality",
+  },
+];
 
 const Home = () => {
   useInViewAnimation();
 
   return (
-    <main className="bg-[#f4f6fb] text-brand">
+    <main className="bg-white text-brand">
       <SEO
         title="Home"
         description="Premium residential and commercial construction, interiors, renovation, and governance—delivered with precision across India."
@@ -237,7 +231,7 @@ const Home = () => {
                 </span>
               ))}
             </div>
-          </div>
+            </div>
 
           <div className="grid flex-1 gap-4 sm:grid-cols-2">
             {heroStats.map((stat) => (
@@ -254,206 +248,247 @@ const Home = () => {
       </section>
 
       {/* About */}
-      <section className="fade-up mx-auto mt-16 grid w-full max-w-6xl gap-10 rounded-3xl bg-white p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] md:grid-cols-[1.1fr,0.9fr] md:p-10">
-          <div className="space-y-6">
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl bg-white p-6 md:p-10">
+        <div className="grid gap-10 md:grid-cols-[1.2fr,0.8fr]">
+          <div>
         <SectionHeading
-            eyebrow="About Karthikeya Constructions"
-            title="We blend modern design thinking with disciplined site execution."
-            description="Our multi-disciplinary studio pairs architects, project managers, and craftsmen under one sprint rhythm so that every milestone—from permit to handover—feels seamless."
+              eyebrow="About Us"
+              title="Turning visions into reality with a legacy of quality and trust."
+              description="We specialise in delivering superior construction, design, and PMC services across Bengaluru and South India. Architects, engineers, and interior designers work in one agile pod so every space feels inspiring and dependable."
           align="left"
-            tone="light"
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {aboutHighlights.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-brand/10 bg-[#f8fafc] p-4">
-                <h3 className="text-base font-semibold text-brand">{item.title}</h3>
-                <p className="mt-2 text-sm text-brand/70">{item.description}</p>
+              tone="light"
+            />
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link
+                to="/about"
+                className="rounded-full bg-brand px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-brand/90"
+              >
+                Read More
+              </Link>
+              <Link
+                to="/contact"
+                className="rounded-full border border-brand px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
+              >
+                Contact Us
+              </Link>
+            </div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {aboutPillars.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-brand/10 bg-[#f8fafc] p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand/60">Rule</p>
+                  <h3 className="mt-2 text-base font-semibold text-brand">{item.title}</h3>
+                  <p className="mt-2 text-sm text-brand/70">{item.description}</p>
                 </div>
               ))}
             </div>
-
-          <div className="flex flex-wrap gap-3">
-            {credibilityBadges.map((badge) => (
-              <span key={badge} className="rounded-full border border-brand/10 bg-brand/5 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/70">
-                {badge}
-                </span>
-          ))}
         </div>
+          <div className="relative overflow-hidden rounded-[32px] bg-brand/5">
+            <img
+              src="/images/construction-site-1.avif"
+              alt="Engineers planning on site"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute bottom-6 left-6 rounded-2xl bg-white/95 px-5 py-4 text-sm text-brand shadow-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Site in Focus</p>
+              <p className="mt-2 font-semibold">Industrial construction responsibility</p>
           </div>
-
-        <div className="relative overflow-hidden rounded-3xl">
-          <img
-            src="/images/gallery-whatsapp-2.jpg"
-            alt="Construction crew working on structural framework"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-          <div className="absolute bottom-6 left-6 rounded-2xl bg-white/90 px-5 py-4 text-sm text-brand shadow-lg">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand/60">
-              Site in focus
-            </p>
-            <p className="mt-2 font-semibold">Premium high-rise topping off in Hyderabad</p>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-gradient-to-br from-[#07132a] via-[#0b1f3f] to-[#07132a] px-6 py-12 text-white shadow-[0_45px_120px_rgba(4,10,30,0.45)] md:px-12">
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-12">
         <SectionHeading
-          eyebrow="Services"
-          title="Full-stack construction expertise for residential and commercial clients."
-          description="Pick the engagement you need—from turnkey design-build to governance for large capital projects."
+          eyebrow="Our Services"
+          title="Provided features curated for contemporary construction."
+          description="Construction, design, interiors, and PMC come together under one roof so that your project feels seamless end-to-end."
           align="left"
-          tone="dark"
+          tone="light"
         />
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {serviceTiles.map((service) => (
+        <div className="grid gap-5 md:grid-cols-2">
+          {serviceCatalog.map((service) => (
             <article
               key={service.title}
-              className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-6 shadow-[0_25px_70px_rgba(3,8,20,0.55)] backdrop-blur transition hover:-translate-y-2 hover:border-white/35"
+              className="rounded-3xl bg-[#f8fafc] p-6 text-brand transition hover:-translate-y-1.5"
             >
-              <div className="flex items-center gap-3 text-2xl">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
+              <div className="flex items-center gap-3 text-3xl">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-brand/10 bg-white text-brand">
                   {service.icon}
                 </span>
                 <h3 className="text-lg font-semibold">{service.title}</h3>
-                </div>
-              <p className="mt-4 text-sm text-white/75">{service.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-white/70">
-                {service.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2">
-                    <span className="inline-block h-1 w-6 rounded-full bg-gradient-to-r from-[#f8c471] to-transparent" />
-                    {point}
-                      </li>
-                    ))}
-                  </ul>
+              </div>
+              <p className="mt-3 text-sm text-brand/70">{service.description}</p>
             </article>
           ))}
-        </div>
+                </div>
       </section>
 
-      {/* Construction Focus */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 shadow-[0_35px_90px_rgba(15,23,42,0.12)] md:px-12">
+      {/* Packages */}
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 md:px-12">
         <SectionHeading
-          eyebrow="Construction"
-          title="Engineered Structures With Real-World Performance"
-          description="From superstructures and PEB shells to governance pods, every deliverable here is centered on site execution, material science, and lifecycle reliability."
+          eyebrow="Home Construction Packages"
+          title="Transparent pricing that balances style and structure."
+          description="Pick the package that suits your lifestyle, material specification, and finishing expectations."
           align="left"
           tone="light"
         />
-        <div className="grid gap-6 md:grid-cols-2">
-          {constructionFocus.map((focus) => (
-            <article
-              key={focus.title}
-              className="rounded-3xl border border-brand/5 bg-[#f8fafc] p-6 shadow-[0_18px_55px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-brand/20 hover:shadow-[0_28px_60px_rgba(15,23,42,0.12)]"
-            >
-              <h3 className="text-xl font-semibold text-brand">{focus.title}</h3>
-              <p className="mt-3 text-sm text-brand/70">{focus.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-brand/80">
-                {focus.highlights.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {constructionPackages.map((pkg) => (
+            <article key={pkg.tier} className="rounded-3xl bg-[#f8fafc] p-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Package</p>
+                  <h3 className="text-xl font-semibold text-brand">{pkg.tier}</h3>
+        </div>
+                <p className="rounded-full bg-brand/5 px-4 py-2 text-sm font-semibold text-brand">{pkg.price}</p>
+                </div>
+              <ul className="mt-5 space-y-2 text-sm text-brand/70">
+                {pkg.inclusions.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand" />
+                    <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                <Link
+                to="/contact"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-brand px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
+                >
+                Book Now
+                </Link>
             </article>
-              ))}
-            </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {constructionGallery.map((image) => (
+          ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-12">
+        <SectionHeading
+          eyebrow="Why Choose Us"
+          title="Building excellence with expertise, innovation, and dedication."
+          description="We combine uncompromising quality with transparent communication so you always know what’s happening on-site."
+          align="left"
+          tone="light"
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {whyChooseReasons.map((reason, index) => (
             <div
-              key={image.src}
-              className="group relative overflow-hidden rounded-3xl shadow-[0_25px_80px_rgba(15,23,42,0.18)]"
+              key={reason}
+              className="group flex items-start gap-4 rounded-3xl border border-brand/10 bg-white p-5 shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-brand/30"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/10 via-brand/5 to-brand-light/10 text-sm font-semibold text-brand">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="text-sm font-semibold text-brand/80">{reason}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="fade-up mt-14">
-      <StatsStrip />
-      </section>
-
-      {/* Projects */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 shadow-[0_35px_90px_rgba(15,23,42,0.12)] md:px-12">
+      {/* Achievements */}
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 md:px-12">
             <SectionHeading
-          eyebrow="Projects"
-          title="Built for impact across residential, commercial, and hospitality."
-          description="Each case study pairs a strong narrative with measurable outcomes—speed, budget, or experience."
+          eyebrow="Our Achievements at a Glance"
+          title="Proud milestones that reflect our dedication and expertise."
               align="left"
           tone="light"
         />
+        <div className="grid gap-6 md:grid-cols-4">
+          {achievements.map((item) => (
+            <div key={item.label} className="rounded-3xl bg-[#f8fafc] p-6 text-center">
+              <p className="text-3xl font-semibold text-brand">{item.value}</p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">{item.label}</p>
+                  </div>
+                ))}
+        </div>
+      </section>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {projectShowcase.map((project) => (
-            <article key={project.title} className="overflow-hidden rounded-3xl border border-brand/5 shadow-[0_18px_55px_rgba(15,23,42,0.15)]">
-              <div className="relative h-64">
-                <img src={project.image} alt={project.title} className="h-full w-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-brand/70">
-                    {project.segment}
-                </span>
-                  <span className="rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-                    {project.timeline}
+      {/* Gallery */}
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-12">
+            <SectionHeading
+          eyebrow="Our Gallery"
+          title="The works we are proud of."
+          description="Interiors, corporate hubs, retail showcases, and hospitality lounges captured from our recent delivery slate."
+              align="left"
+          tone="light"
+        />
+        <div className="grid gap-4 md:grid-cols-3">
+          {galleryHighlights.map((item) => (
+            <figure key={item.title} className="group overflow-hidden rounded-3xl bg-[#f8fafc]">
+              <div className="relative h-56">
+                <img src={item.image} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <span className="absolute left-4 top-4 rounded-full bg-white px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand">
+                  {item.category}
                       </span>
-                </div>
-            </div>
-              <div className="space-y-4 bg-white p-6">
-                <div className="space-y-1">
-                  <h3 className="text-xl font-semibold text-brand">{project.title}</h3>
-                  <p className="text-sm text-brand/60">{project.location}</p>
-                </div>
-                <p className="text-sm text-brand/70">{project.outcome}</p>
-                <Link to="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-brand">
-                  View Case Study <span aria-hidden>→</span>
-                      </Link>
-              </div>
-                </article>
-              ))}
+                    </div>
+              <div className="p-5">
+                <p className="text-base font-semibold">{item.title}</p>
+                  </div>
+            </figure>
+          ))}
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-[#0b162b] px-6 py-12 text-white shadow-[0_45px_120px_rgba(4,10,30,0.45)] md:px-12">
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-12">
         <SectionHeading
           eyebrow="Testimonials"
-          title="Clients trust us with their largest investments."
-          description="Hear from homeowners, developers, and global brands that partnered with us for high-stakes delivery."
+          title="We care about our customers’ experience too."
+          description="Hear how homeowners and businesses describe working with our construction and interiors teams."
           align="left"
-          tone="dark"
+          tone="light"
         />
         <TestimonialSlider />
       </section>
 
       {/* CTA */}
-      <section className="fade-up mx-auto my-16 w-full max-w-5xl rounded-3xl bg-gradient-to-r from-[#f8c471] via-[#f39c12] to-[#d35400] px-6 py-12 text-center text-[#1b1205] shadow-[0_40px_110px_rgba(243,156,18,0.35)] md:px-12">
-        <h2 className="text-3xl font-semibold md:text-4xl">{callToAction.headline}</h2>
-        <p className="mt-4 text-base md:text-lg">{callToAction.subtext}</p>
-        <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-            className="rounded-full bg-[#1b1205] px-7 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-white"
+      <section className="fade-up mx-auto my-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 md:px-12">
+        <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Where Style Meets Functionality</p>
+            <h2 className="mt-3 text-3xl font-semibold text-brand">Transforming spaces, elevating lives.</h2>
+            <p className="mt-4 text-sm text-brand/70">
+              Share your plot details and our team will schedule a consultation to walk you through designs, timelines, and budgets.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-brand/70">
+              <li>• Personalised concepts for villas, apartments, and commercial sites</li>
+              <li>• Transparent packages with branded materials</li>
+              <li>• Dedicated support even after handover</li>
+            </ul>
+          </div>
+          <form className="space-y-4 rounded-3xl bg-[#f8fafc] p-6">
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Full Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="mt-2 w-full rounded-2xl border border-brand/10 bg-white px-4 py-3 text-sm text-brand outline-none focus:border-brand focus:ring-1 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Phone Number</label>
+              <input
+                type="tel"
+                placeholder="+91 00000 00000"
+                className="mt-2 w-full rounded-2xl border border-brand/10 bg-white px-4 py-3 text-sm text-brand outline-none focus:border-brand focus:ring-1 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/60">Location of Your Plot</label>
+              <input
+                type="text"
+                placeholder="City or neighbourhood"
+                className="mt-2 w-full rounded-2xl border border-brand/10 bg-white px-4 py-3 text-sm text-brand outline-none focus:border-brand focus:ring-1 focus:ring-brand"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-2xl bg-brand px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_45px_rgba(4,10,30,0.25)] transition hover:bg-brand/90"
             >
-            Schedule A Call
-            </Link>
-          <a
-            href="tel:+917013794781"
-            className="rounded-full border border-[#1b1205] px-7 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#1b1205]"
-          >
-            +91 70137 94781
-          </a>
+              Submit
+            </button>
+          </form>
         </div>
       </section>
     </main>

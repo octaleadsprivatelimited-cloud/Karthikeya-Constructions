@@ -39,22 +39,13 @@ const Contact = () => {
   const googleMapsEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(contactDetails.address)}&output=embed`;
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden">
+    <div className="relative isolate min-h-screen bg-white">
       <SEO
         title="Contact"
         description="Contact Karthikeya Constructions for consultations, proposals, and site visits."
         keywords={["contact", "consultation", "proposal", "site visit", "phone", "email"]}
         image="/images/hero-whatsapp.jpg"
       />
-      <div className="absolute inset-0 -z-10">
-        <img
-          src={backgroundImage}
-          alt="Contact ambient background"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/84" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.24)_0%,_rgba(10,32,51,0.85)_70%)]" />
-      </div>
 
       <div className="relative space-y-24 pb-24">
         <PageHero
@@ -64,7 +55,7 @@ const Contact = () => {
         />
 
         <section className="fade-up mx-auto w-full max-w-6xl px-6 md:px-8 text-brand">
-          <div className="rounded-3xl border border-brand/10 bg-white/95 px-6 py-12 shadow-[0_26px_55px_rgba(10,32,51,0.18)] md:px-10">
+          <div className="rounded-3xl bg-white px-6 py-12 md:px-10">
             <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] md:items-center">
               <div className="space-y-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand/60">
@@ -95,7 +86,7 @@ const Contact = () => {
                 {quickFacts.map((fact) => (
                   <div
                     key={fact.label}
-                    className="rounded-3xl border border-brand/10 bg-white p-5 shadow-[0_18px_40px_rgba(10,32,51,0.18)]"
+                    className="rounded-3xl bg-[#f8fafc] p-5 text-brand"
                   >
                     <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/60">
                       {fact.label}
@@ -167,11 +158,11 @@ const Contact = () => {
                 ].map((card) => (
                   <div
                     key={card.title}
-                    className="group relative overflow-hidden rounded-3xl border border-brand/10 bg-white p-6 shadow-[0_20px_45px_rgba(10,32,51,0.15)] transition duration-500 hover:-translate-y-2 hover:border-brand/20"
+                    className="group relative overflow-hidden rounded-3xl bg-[#f8fafc] p-6 text-brand transition duration-500 hover:-translate-y-2"
                   >
                     <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-brand/5 blur-2xl transition duration-500 group-hover:bg-brand/10" />
                     <div className="relative flex items-start gap-4">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-brand/15 bg-brand/5 text-brand">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-brand/15 bg-white text-brand">
                         {card.icon}
                       </span>
                       <div>
@@ -182,7 +173,7 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-              <div className="space-y-6 rounded-3xl border border-brand/10 bg-white p-8 shadow-[0_22px_55px_rgba(10,32,51,0.2)]">
+              <div className="space-y-6 rounded-3xl bg-[#f8fafc] p-8 text-brand">
                 <div className="space-y-2">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-brand/60">
                     Project Inquiry
@@ -198,14 +189,14 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="fade-up mx-auto w-full max-w-6xl px-6 pb-24 text-white md:px-8">
-          <div className="rounded-3xl border border-white/12 bg-white/5 px-6 py-12 shadow-[0_26px_65px_rgba(10,32,51,0.45)] backdrop-blur md:px-10">
+        <section className="fade-up mx-auto w-full max-w-6xl px-6 pb-24 text-brand md:px-8">
+          <div className="rounded-3xl bg-white px-6 py-12 md:px-10">
             <SectionHeading
               eyebrow="Visit Us"
               title="Our studio is located in the heart of Secunderabad."
-              tone="dark"
+              tone="light"
             />
-            <div className="mt-8 overflow-hidden rounded-3xl border border-white/15">
+            <div className="mt-8 overflow-hidden rounded-3xl">
               <iframe
                 title="Karthikeya Constructions"
                 src={googleMapsEmbedSrc}

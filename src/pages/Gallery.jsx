@@ -90,22 +90,13 @@ const Gallery = () => {
   useInViewAnimation();
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden">
+    <div className="relative isolate min-h-screen bg-white">
       <SEO
         title="Gallery"
         description="Explore our gallery—residences, workplaces, and hospitality environments crafted by our experience-led pods."
         keywords={["gallery", "projects", "portfolio", "residential", "commercial", "hospitality"]}
         image="/images/hero-whatsapp.jpg"
       />
-      <div className="absolute inset-0 -z-10">
-        <img
-          src={backgroundImage}
-          alt="Gallery ambient background"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/82" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22)_0%,_rgba(10,32,51,0.85)_70%)]" />
-      </div>
 
       <div className="relative space-y-24 pb-24">
         <PageHero
@@ -114,45 +105,39 @@ const Gallery = () => {
           background={backgroundImage}
         />
 
-        <section className="fade-up mx-auto w-full max-w-6xl px-6 md:px-8 text-white">
-          <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/5 px-8 py-12 shadow-[0_26px_65px_rgba(10,32,51,0.45)] backdrop-blur md:px-12">
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.16)_0%,_transparent_65%)]" />
-              <div className="absolute -left-20 top-10 h-60 w-60 rounded-full bg-brand/35 blur-3xl" />
-              <div className="absolute -right-16 bottom-6 h-60 w-60 rounded-full bg-brand-accent/30 blur-3xl" />
-            </div>
-
-            <div className="relative grid gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-center">
+        <section className="fade-up mx-auto w-full max-w-6xl px-6 md:px-8 text-brand">
+          <div className="rounded-3xl bg-white px-8 py-12 md:px-12">
+            <div className="grid gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-center">
               <div className="space-y-6">
                 <div className="space-y-3">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-white/65">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand/60">
                     Featured Showcase
                   </p>
-                  <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+                  <h2 className="text-3xl font-semibold leading-tight text-brand md:text-4xl">
                     Immersive spaces designed for impact.
                   </h2>
-                  <p className="max-w-2xl text-sm text-white/70 md:text-base">
+                  <p className="max-w-2xl text-sm text-brand/70 md:text-base">
                     Each project celebrates the unique character of the brand or family we collaborate with—balancing form, function, and future-readiness.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">
-                  <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+                <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/60">
+                  <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
                     Residential
                   </span>
-                  <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+                  <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
                     Commercial
                   </span>
-                  <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+                  <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
                     Hospitality
                   </span>
-                  <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+                  <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
                     Experience Labs
                   </span>
                 </div>
               </div>
 
-              <div className="space-y-6 rounded-3xl border border-white/10 bg-white/8 p-6 shadow-[0_18px_45px_rgba(10,32,51,0.35)]">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
+              <div className="space-y-6 rounded-3xl bg-[#f3f7fb] p-6 text-brand">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.32em] text-brand/60">
                   Delivery Metrics
                 </h3>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -178,71 +163,62 @@ const Gallery = () => {
                       detail: "Documented handovers",
                     },
                   ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-2xl border border-white/15 bg-white/10 p-4 text-white shadow-[0_12px_30px_rgba(10,32,51,0.35)]"
-                    >
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">
+                    <div key={item.label} className="rounded-2xl bg-white p-4 text-brand ring-1 ring-brand/10">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/55">
                         {item.label}
                       </p>
                       <p className="mt-2 text-xl font-semibold">{item.value}</p>
-                      <p className="mt-1 text-xs text-white/75">{item.detail}</p>
+                      <p className="mt-1 text-xs text-brand/70">{item.detail}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-wrap gap-3 text-xs text-white/65">
-                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1">
+                <div className="flex flex-wrap gap-3 text-xs text-brand/60">
+                  <span className="rounded-full border border-brand/15 bg-white px-3 py-1">
                     VR Walkthrough Ready
                   </span>
-                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1">
+                  <span className="rounded-full border border-brand/15 bg-white px-3 py-1">
                     Procurement Pods
                   </span>
-                  <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1">
+                  <span className="rounded-full border border-brand/15 bg-white px-3 py-1">
                     On-site QA
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="relative mt-12 rounded-3xl border border-white/12 bg-white/5 p-4 shadow-[0_22px_55px_rgba(10,32,51,0.4)] backdrop-blur">
+            <div className="relative mt-12 rounded-3xl bg-[#f8fafc] p-4">
               <ProjectShowcase />
             </div>
           </div>
         </section>
 
-        <section className="fade-up bg-white/5 py-24">
+        <section className="fade-up bg-white py-24">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
-            <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/5 px-8 py-12 text-white shadow-[0_28px_70px_rgba(10,32,51,0.45)] backdrop-blur">
-              <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.16)_0%,_transparent_65%)]" />
-                <div className="absolute -left-32 top-16 h-72 w-72 rounded-full bg-brand/35 blur-3xl" />
-                <div className="absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-brand-accent/30 blur-3xl" />
-              </div>
-
-              <div className="relative space-y-10">
+            <div className="rounded-3xl bg-white px-8 py-12 text-brand md:px-12">
+              <div className="space-y-10">
                 <div className="grid gap-6 md:flex md:items-center md:justify-between">
                   <div className="max-w-2xl space-y-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-white/65">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand/60">
                       Project Gallery
                     </p>
-                    <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+                    <h2 className="text-3xl font-semibold leading-tight text-brand md:text-4xl">
                       A glimpse into our portfolio of crafted spaces.
                     </h2>
-                    <p className="text-sm text-white/70 md:text-base">
+                    <p className="text-sm text-brand/70 md:text-base">
                       Discover a breadth of residential villas, commercial workplaces, hospitality destinations, and experience-led retail environments—all engineered for long-term relevance.
                     </p>
                   </div>
-                  <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                  <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/60">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-4 py-2">
                       Show All
                     </span>
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-4 py-2">
                       Architecture
                     </span>
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-4 py-2">
                       Interiors
                     </span>
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-4 py-2">
                       Retail
                     </span>
                   </div>
@@ -252,7 +228,7 @@ const Gallery = () => {
                   {galleryImages.map((item, index) => (
                     <figure
                       key={item.title}
-                      className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/8 shadow-[0_24px_55px_rgba(10,32,51,0.35)] backdrop-blur transition duration-500 hover:-translate-y-2 hover:bg-white/12"
+                      className="group relative overflow-hidden rounded-3xl bg-white ring-1 ring-brand/10 transition duration-500 hover:-translate-y-2 hover:ring-brand/30"
                     >
                       <img
                         src={item.image}
@@ -262,7 +238,7 @@ const Gallery = () => {
                       />
                       <figcaption className="absolute inset-0 flex flex-col justify-end p-6 text-brand">
                         <div className="opacity-0 transition duration-500 group-hover:opacity-100">
-                          <div className="rounded-2xl border border-brand/10 bg-white/95 p-5 shadow-[0_12px_32px_rgba(10,32,51,0.16)] backdrop-blur">
+                          <div className="rounded-2xl border border-brand/10 bg-white/95 p-5 shadow-[0_12px_32px_rgba(15,23,42,0.18)] backdrop-blur">
                             <h3 className="text-xl font-medium text-brand" style={{ fontFamily: "Outfit, sans-serif" }}>
                               {item.title}
                             </h3>
@@ -286,16 +262,16 @@ const Gallery = () => {
           </div>
         </section>
 
-        <section className="fade-up mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 pb-24 text-center text-white md:px-8">
+        <section className="fade-up mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 pb-24 text-center text-brand md:px-8">
           <SectionHeading
             eyebrow="Need a Custom Walkthrough?"
             title="Request a personalized presentation of relevant case studies."
             description="Share your project goals and we’ll curate a detailed deck with floor plans, finishes, and investment breakdowns tailored to your requirements."
-            tone="dark"
+            tone="light"
           />
           <Link
             to="/contact"
-            className="rounded-full border border-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-brand"
+            className="rounded-full border border-brand px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
           >
             Schedule A Presentation
           </Link>

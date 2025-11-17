@@ -50,24 +50,14 @@ const Interior = () => {
   useInViewAnimation();
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden">
+    <div className="bg-white text-brand">
       <SEO
         title="Interior Design"
         description="End-to-end interior design and execution—material curation, bespoke joinery, lighting, and styling."
         keywords={["interior design", "joinery", "lighting", "styling", "residential interiors", "commercial interiors"]}
         image="/images/hero-whatsapp.jpg"
       />
-      <div className="absolute inset-0 -z-10">
-        <img
-          src={backgroundImage}
-          alt="Interior ambient background"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/82" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22)_0%,_rgba(10,32,51,0.85)_70%)]" />
-      </div>
-
-      <div className="relative space-y-24 pb-24">
+      <div className="space-y-24 pb-24">
         <PageHero
           title="Interior Design & Styling"
           description="Turnkey interior solutions for residential and commercial environments with world-class design, modular production, and on-site craftsmanship."
@@ -75,13 +65,7 @@ const Interior = () => {
         />
 
       <section className="fade-up mx-auto w-full max-w-6xl px-6 md:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-brand/10 bg-white/95 px-6 py-12 shadow-[0_28px_70px_rgba(10,32,51,0.2)] md:px-10">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(10,32,51,0.06)_0%,_transparent_70%)]" />
-            <div className="absolute -left-16 top-8 h-52 w-52 rounded-full bg-brand/10 blur-3xl" />
-            <div className="absolute -right-16 bottom-4 h-56 w-56 rounded-full bg-brand-accent/15 blur-3xl" />
-          </div>
-
+        <div className="relative overflow-hidden rounded-3xl bg-white px-6 py-12 md:px-10">
           <div className="relative space-y-8">
             <SectionHeading
               eyebrow="Interior Expertise"
@@ -96,34 +80,26 @@ const Interior = () => {
                 return (
                   <article
                     key={service.title}
-                    className="group relative flex h-full flex-col justify-between rounded-3xl border border-brand/10 bg-white p-6 shadow-[0_18px_40px_rgba(10,32,51,0.12)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_26px_55px_rgba(10,32,51,0.18)]"
+                    className="group relative flex h-full flex-col justify-between rounded-3xl bg-[#f8fafc] p-6 transition duration-500 hover:-translate-y-2"
                   >
                     <div className="space-y-4">
                       <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-brand/15 bg-brand/5 text-brand shadow-[0_12px_25px_rgba(10,32,51,0.18)]">
                         {Icon && <Icon className="text-xl" />}
                       </span>
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-brand">{service.title}</h3>
-                        <p className="text-sm text-brand/70">{service.description}</p>
+                      <div className="space-y-2 text-[#0d1b2a]">
+                        <h3 className="text-lg font-semibold">{service.title}</h3>
+                        <p className="text-sm text-[#546173]">{service.description}</p>
                       </div>
                       {service.highlights && (
-                        <ul className="space-y-2 text-xs text-brand/65">
+                        <ul className="space-y-2 text-xs text-[#5b6b7d]">
                           {service.highlights.slice(0, 3).map((item) => (
                             <li key={item} className="flex items-start gap-2">
-                              <span className="mt-1 inline-flex h-1 w-5 rounded-full bg-brand-accent" />
+                              <span className="mt-1 inline-flex h-1 w-5 rounded-full bg-brand" />
                               {item}
                             </li>
                           ))}
                         </ul>
                       )}
-                    </div>
-                    <div className="mt-6 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/55">
-                      <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1">
-                        Turnkey
-                      </span>
-                      <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1">
-                        CX Pods
-                      </span>
                     </div>
                   </article>
                 );
@@ -161,34 +137,33 @@ const Interior = () => {
               eyebrow="What Sets Us Apart"
               title="Comprehensive, detail-led interior execution."
               align="left"
-              tone="dark"
             />
-            <div className="rounded-3xl border border-white/12 bg-white/10 p-6 text-white shadow-[0_24px_55px_rgba(10,32,51,0.35)] backdrop-blur">
-              <ul className="space-y-3 text-sm text-white/80">
+            <div className="rounded-3xl border border-brand/10 bg-white p-6 text-brand shadow-[0_24px_55px_rgba(15,23,42,0.12)]">
+              <ul className="space-y-3 text-sm text-brand/75">
                 {interiorHighlights.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-6 rounded-full bg-brand-accent" aria-hidden />
+                    <span className="mt-2 h-1.5 w-6 rounded-full bg-brand" aria-hidden />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="rounded-3xl border border-white/12 bg-white/10 p-6 text-white shadow-[0_24px_55px_rgba(10,32,51,0.35)] backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0d2a4a]/70">
                 Material & Craft
               </p>
-              <h3 className="mt-2 text-lg font-semibold text-white">Specialized workmanship</h3>
+              <h3 className="mt-2 text-lg font-semibold text-[#0d2a4a]">Specialized workmanship</h3>
               <div className="space-y-4">
                 {materialExpertise.map((item) => {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-[0_12px_25px_rgba(10,32,51,0.35)]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white text-[#0d2a4a] shadow-[0_12px_25px_rgba(10,32,51,0.35)]">
                         <Icon className="text-xl" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-white">{item.title}</p>
-                        <p className="text-sm text-white/70">{item.description}</p>
+                        <p className="text-sm font-semibold text-[#0d2a4a]">{item.title}</p>
+                        <p className="text-sm text-[#5c6f82]">{item.description}</p>
                       </div>
                     </div>
                   );
@@ -199,49 +174,49 @@ const Interior = () => {
         </div>
       </section>
 
-      <section className="fade-up mx-auto w-full max-w-6xl px-6 md:px-8">
+      <section className="fade-up mx-auto w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-10">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-white/65">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand/60">
               Signature Interiors
             </p>
-            <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
+            <h2 className="text-3xl font-semibold leading-tight text-brand md:text-4xl">
               Immersive spaces designed for delight.
             </h2>
-            <p className="max-w-3xl text-sm text-white/70 md:text-base">
+            <p className="max-w-3xl text-sm text-brand/70 md:text-base">
               Tour a selection of residential and commercial interiors executed by our in-house teams across Delhi NCR and beyond.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">
-            <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+          <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand/60">
+            <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
               Residential
             </span>
-            <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+            <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
               Commercial
             </span>
-            <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">
+            <span className="rounded-full border border-brand/15 bg-brand/5 px-4 py-2">
               Retail
             </span>
           </div>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-white/12 bg-white/5 p-4 shadow-[0_18px_45px_rgba(10,32,51,0.35)] backdrop-blur">
+        <div className="mt-8 rounded-3xl bg-[#f8fafc] p-4">
           <ProjectShowcase />
         </div>
       </section>
 
-      <section className="fade-up bg-brand/5 py-20 text-white">
+      <section className="fade-up bg-white py-20 text-brand">
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
           <SectionHeading
             eyebrow="Partner Ecosystem"
             title="Branded material partners for quality assurance."
-            tone="dark"
+            tone="light"
           />
           <div className="flex flex-wrap items-center justify-center gap-3">
             {brandPartners.map((brand) => (
               <span
                 key={brand}
-                className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70"
+                className="rounded-full border border-brand/10 bg-brand/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-brand/70"
               >
                 {brand}
               </span>
@@ -250,42 +225,38 @@ const Interior = () => {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 md:px-8 text-white">
+      <section className="fade-up mx-auto w-full max-w-6xl rounded-3xl bg-white px-6 py-12 text-brand md:px-10">
         <SectionHeading
           eyebrow="Testimonials"
           title="Voices from our clients and partners."
           description="Long-term relationships built on design sensitivity, execution discipline, and transparent communication."
-          tone="dark"
+          tone="light"
         />
         <TestimonialSlider />
       </section>
 
-      <section className="fade-up relative overflow-hidden bg-brand text-white">
-        <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(209,160,79,0.3)_0%,_transparent_70%)]"
-          aria-hidden
-        />
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 py-20 text-center md:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-accent">
+      <section className="fade-up bg-white text-brand">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 py-20 text-center md:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-brand">
             Ready To Transform Your Space?
           </p>
           <h2 className="max-w-3xl text-3xl font-semibold md:text-4xl">
             Book an interior design workshop with the Karthikeya team.
           </h2>
-          <p className="max-w-2xl text-base text-white/70">
+          <p className="max-w-2xl text-base text-brand/70">
             Share your project brief and we’ll schedule a walkthrough, concept presentation, and
             detailed estimate tailored to your goals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href={`mailto:${contactDetails.email}`}
-              className="rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand-accent hover:text-white"
+              className="rounded-full border border-brand px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
             >
               Mail Our Team
             </a>
             <Link
               to="/contact"
-              className="rounded-full border border-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-brand"
+              className="rounded-full border border-brand px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
             >
               Book A Consultation
             </Link>
