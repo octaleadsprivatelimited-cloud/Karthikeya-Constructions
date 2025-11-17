@@ -147,36 +147,32 @@ export const roadmap = [
 
 export const projectShowcase = [
   {
-    title: "Luxury Living Area",
+    title: "Skyview Residences – Tower B",
     description:
-      "An expansive living room concept with layered lighting, premium veneer panelling, and bespoke sofas for a warm ambience.",
-    image:
-      "/images/living-area.avif",
-    category: "Residential Interiors",
+      "26-storey RCC superstructure with PT slabs, shear-wall cores, and façade brackets cast in a single cycle for faster elevations.",
+    image: "/images/construction-premium.avif",
+    category: "Residential Superstructure",
   },
   {
-    title: "Modern Kitchen Design",
+    title: "Innovation Tech Park Podium",
     description:
-      "Handle-less modular kitchen with quartz countertops, intelligent storage, and matte fronts in dual tones.",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
-    category: "Kitchen Studio",
+      "Five-acre corporate podium with composite columns, fire-rated shafts, and MEP decks coordinated through BIM and laser layout.",
+    image: "/images/construction-site-1.avif",
+    category: "Commercial & Corporate",
   },
   {
-    title: "Corporate Office Hub",
+    title: "Eastern Logistics Hub",
     description:
-      "Collaborative workspaces featuring acoustic pods, branded zones, and biophilic design for productivity.",
-    image:
-      "/images/corporate-office-hub.webp",
-    category: "Commercial Interior",
+      "PEB + RCC hybrid warehouse with 32-meter clear spans, insulated roofing, and FM-approved floor flatness for AGV movement.",
+    image: "/images/construction-site-2.avif",
+    category: "Industrial & Warehousing",
   },
   {
-    title: "Retail Showroom Experience",
+    title: "Metro Concourse Retrofit",
     description:
-      "Immersive retail concept with custom fixtures, dynamic lighting and a guided circulation strategy.",
-    image:
-      "/images/retail-showroom.webp",
-    category: "Showroom Design",
+      "Night-shift retrofit of transit concourse with carbon-fibre wrapping, waterproofing upgrades, and new passenger circulation cores.",
+    image: "/images/construction-site-3.avif",
+    category: "Infrastructure Upgrades",
   },
 ];
 

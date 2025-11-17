@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <img
-              src="/karthikeya-logo.png"
+              src="/images/brand-logo.png"
               alt="Karthikeya Constructions logo"
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain md:h-16"
             />
           </div>
           <p className="text-sm leading-relaxed text-white/70">

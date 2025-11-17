@@ -75,6 +75,52 @@ const serviceTiles = [
   },
 ];
 
+const constructionFocus = [
+  {
+    title: "Residential Superstructures",
+    description:
+      "End-to-end RCC frames, post-tension slabs, and façade envelopes for villas, gated communities, and luxury towers with vastu-safe orientation and MEP coordination baked in.",
+    highlights: ["High-rise concrete cores", "Premium villa clusters", "Adaptive reuse & extensions"],
+  },
+  {
+    title: "Commercial & Institutional",
+    description:
+      "Corporate HQs, retail streets, and hospitality assets executed with fast-track structural systems, acoustic separation, and compliance-ready services shafts.",
+    highlights: ["Hybrid office campuses", "Hospitality podiums", "Retail & experiential hubs"],
+  },
+  {
+    title: "Industrial & Logistics",
+    description:
+      "Large-span PEB sheds, automated warehouses, and utility plants engineered for load efficiency, fire compliance, and rapid erection cycles.",
+    highlights: ["PEB + RCC hybrids", "Cold storage & logistics", "Utility & infra corridors"],
+  },
+  {
+    title: "Program Governance",
+    description:
+      "Dedicated PMC pods that run cost, safety, and quality controls across multiple job sites with BIM coordination and live production dashboards.",
+    highlights: ["Owner’s representation", "Digital QA/QC", "Integrated contractor interfaces"],
+  },
+];
+
+const constructionGallery = [
+  {
+    src: "/images/construction-premium.avif",
+    alt: "Premium residential tower under construction",
+  },
+  {
+    src: "/images/construction-site-1.avif",
+    alt: "Engineers inspecting reinforced concrete columns",
+  },
+  {
+    src: "/images/construction-site-2.avif",
+    alt: "Steel structure framework being assembled on site",
+  },
+  {
+    src: "/images/construction-site-3.avif",
+    alt: "Night-time concrete pour for high-rise deck",
+  },
+];
+
 const projectShowcase = [
   {
     title: "Skyline Grand Residences",
@@ -238,8 +284,8 @@ const Home = () => {
 
         <div className="relative overflow-hidden rounded-3xl">
           <img
-            src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
-            alt="Engineers discussing drawings"
+            src="/images/gallery-whatsapp-2.jpg"
+            alt="Construction crew working on structural framework"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
@@ -288,6 +334,52 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Construction Focus */}
+      <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 shadow-[0_35px_90px_rgba(15,23,42,0.12)] md:px-12">
+        <SectionHeading
+          eyebrow="Construction"
+          title="Engineered Structures With Real-World Performance"
+          description="From superstructures and PEB shells to governance pods, every deliverable here is centered on site execution, material science, and lifecycle reliability."
+          align="left"
+          tone="light"
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {constructionFocus.map((focus) => (
+            <article
+              key={focus.title}
+              className="rounded-3xl border border-brand/5 bg-[#f8fafc] p-6 shadow-[0_18px_55px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-brand/20 hover:shadow-[0_28px_60px_rgba(15,23,42,0.12)]"
+            >
+              <h3 className="text-xl font-semibold text-brand">{focus.title}</h3>
+              <p className="mt-3 text-sm text-brand/70">{focus.description}</p>
+              <ul className="mt-5 space-y-2 text-sm text-brand/80">
+                {focus.highlights.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+              ))}
+            </div>
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          {constructionGallery.map((image) => (
+            <div
+              key={image.src}
+              className="group relative overflow-hidden rounded-3xl shadow-[0_25px_80px_rgba(15,23,42,0.18)]"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="fade-up mt-14">
       <StatsStrip />
@@ -295,11 +387,11 @@ const Home = () => {
 
       {/* Projects */}
       <section className="fade-up mx-auto mt-16 w-full max-w-6xl rounded-3xl bg-white px-6 py-12 shadow-[0_35px_90px_rgba(15,23,42,0.12)] md:px-12">
-        <SectionHeading
+            <SectionHeading
           eyebrow="Projects"
           title="Built for impact across residential, commercial, and hospitality."
           description="Each case study pairs a strong narrative with measurable outcomes—speed, budget, or experience."
-          align="left"
+              align="left"
           tone="light"
         />
 
@@ -312,12 +404,12 @@ const Home = () => {
                 <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                   <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-brand/70">
                     {project.segment}
-                  </span>
+                </span>
                   <span className="rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
                     {project.timeline}
-                  </span>
+                      </span>
                 </div>
-              </div>
+            </div>
               <div className="space-y-4 bg-white p-6">
                 <div className="space-y-1">
                   <h3 className="text-xl font-semibold text-brand">{project.title}</h3>

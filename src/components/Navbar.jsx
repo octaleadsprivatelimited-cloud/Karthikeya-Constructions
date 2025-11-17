@@ -24,7 +24,7 @@ const Navbar = () => {
           key={item.label}
           to={item.to}
           onClick={closeMenu}
-          className="text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:text-white"
+          className="text-sm font-medium uppercase tracking-[0.2em] text-brand/80 transition-colors duration-300 hover:text-brand"
         >
           {item.label}
         </NavLink>
@@ -32,7 +32,7 @@ const Navbar = () => {
       <NavLink
         to="/contact"
         onClick={closeMenu}
-        className="rounded-full border border-white px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-black"
+        className="rounded-full border border-brand px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-brand transition-all duration-300 hover:bg-brand hover:text-white"
       >
         Enquire Now
       </NavLink>
@@ -40,18 +40,18 @@ const Navbar = () => {
   );
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-black/95 backdrop-blur shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-2.5 md:px-7 md:py-3">
         <div className="flex items-center gap-3">
           <img
-            src="/karthikeya-logo.png"
+            src="/images/brand-logo.png"
             alt="Karthikeya Constructions logo"
-            className="h-12 w-auto object-contain"
+            className="h-14 w-auto -my-1 object-contain md:h-16"
           />
         </div>
-        <div className="hidden lg:block text-white">{renderLinks()}</div>
+        <div className="hidden lg:block text-brand">{renderLinks()}</div>
         <button
-          className="text-2xl text-white lg:hidden"
+          className="text-2xl text-brand lg:hidden"
           type="button"
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -60,7 +60,7 @@ const Navbar = () => {
         </button>
       </div>
       {open && (
-        <div className="border-t border-white/10 bg-black px-6 pb-10 pt-6 shadow-lg lg:hidden text-white">
+        <div className="border-t border-brand/10 bg-white px-6 pb-10 pt-6 text-brand shadow-lg lg:hidden">
           {renderLinks("column")}
         </div>
       )}
