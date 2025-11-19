@@ -6,7 +6,7 @@ const SEO = ({ title, description, keywords = [], image, url }) => {
     description ||
     "Residential and commercial turnkey construction, interiors, renovation, and governance across India.";
   const metaKeywords = keywords.join(", ");
-  const metaImage = image || "/images/hero-whatsapp.jpg";
+  const metaImage = image || "/images/logo.png";
   const metaUrl = url || "https://karthikeya-constructions.example";
 
   return (

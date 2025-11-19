@@ -29,6 +29,7 @@ export const services = [
     description:
       "Concept-to-blueprint architectural planning, approvals, 3D visualization, and structural coordination for homes and commercial spaces.",
     icon: FaDraftingCompass,
+    image: "/images/architectural-design.webp",
     highlights: [
       "Architectural drawings & BIM-ready plans",
       "Regulatory approvals & structural liaison",
@@ -40,6 +41,7 @@ export const services = [
     description:
       "End-to-end villa, bungalow, duplex, and independent floor construction with premium materials and site supervision.",
     icon: FaHome,
+    image: "/images/building-constructions.webp",
     highlights: [
       "Custom layouts & vastu-aligned planning",
       "Civil, MEP, and finishing under one roof",
@@ -51,6 +53,7 @@ export const services = [
     description:
       "Turnkey interiors for bedrooms, living rooms, kitchens, and dining spaces tailored to lifestyle, storage, and aesthetic goals.",
     icon: GiSofa,
+    image: "/images/interiors.webp",
     highlights: [
       "Modular kitchens & wardrobe systems",
       "False ceilings, lighting & flooring",
@@ -73,6 +76,7 @@ export const services = [
     description:
       "Transform existing spaces with structural upgrades, damp-proofing, layout optimization, and finish refresh.",
     icon: FaTools,
+    image: "/images/renovation-remodeling.webp",
     highlights: [
       "Structural rework & expansion",
       "Bathroom, kitchen & facade upgrades",

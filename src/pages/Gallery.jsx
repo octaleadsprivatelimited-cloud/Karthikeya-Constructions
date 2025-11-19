@@ -6,6 +6,48 @@ import ProjectShowcase from "../components/ProjectShowcase";
 import useInViewAnimation from "../hooks/useInViewAnimation";
 
 const galleryImages = [
+  // Construction images - displayed first
+  {
+    title: "Construction Project 1",
+    description: "High-quality construction work showcasing precision engineering and skilled craftsmanship.",
+    image: "/images/construction1.webp",
+  },
+  {
+    title: "Construction Project 2",
+    description: "Modern construction site demonstrating professional project management and quality execution.",
+    image: "/images/construction2.webp",
+  },
+  {
+    title: "Construction Project 3",
+    description: "Premium construction project highlighting superior building techniques and attention to detail.",
+    image: "/images/construction3.webp",
+  },
+  {
+    title: "Construction Project 4",
+    description: "Expert construction services showcasing advanced building techniques and quality materials.",
+    image: "/images/adobe-stock-406163205.jpeg",
+  },
+  {
+    title: "Construction Project 5",
+    description: "Professional construction project demonstrating excellence in design and execution.",
+    image: "/images/adobe-stock-375645065.jpeg",
+  },
+  {
+    title: "Premium Construction Project",
+    description: "High-quality construction work demonstrating precision and craftsmanship.",
+    image: "/images/gallery-whatsapp-1.jpg",
+  },
+  {
+    title: "Excellence in Building",
+    description: "Showcasing our commitment to quality construction and attention to detail.",
+    image: "/images/gallery-whatsapp-2.jpg",
+  },
+  {
+    title: "Professional Construction",
+    description: "Expert construction services delivering superior results and client satisfaction.",
+    image: "/images/gallery-whatsapp-3.jpg",
+  },
+  // Other gallery images
   {
     title: "Grand Lobby",
     description: "Double-height lobby with custom brass lighting and Italian marble cladding.",
@@ -65,21 +107,6 @@ const galleryImages = [
     title: "Elegant Residential Design",
     description: "Sophisticated residential space with modern amenities and timeless appeal.",
     image: "/images/gallery-copy1.jpg",
-  },
-  {
-    title: "Premium Construction Project",
-    description: "High-quality construction work demonstrating precision and craftsmanship.",
-    image: "/images/gallery-whatsapp-1.jpg",
-  },
-  {
-    title: "Excellence in Building",
-    description: "Showcasing our commitment to quality construction and attention to detail.",
-    image: "/images/gallery-whatsapp-2.jpg",
-  },
-  {
-    title: "Professional Construction",
-    description: "Expert construction services delivering superior results and client satisfaction.",
-    image: "/images/gallery-whatsapp-3.jpg",
   },
 ];
 

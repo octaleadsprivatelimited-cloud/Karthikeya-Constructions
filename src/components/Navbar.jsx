@@ -5,8 +5,7 @@ import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 const navItems = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Interior", to: "/interior" },
-  { label: "Construction", to: "/construction" },
+  { label: "Services", to: "/services" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
 ];
@@ -42,13 +41,13 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-2.5 md:px-7 md:py-3">
-        <div className="flex items-center gap-3">
+        <NavLink to="/" className="flex items-center gap-3 -ml-5 md:-ml-7">
           <img
-            src="/images/brand-logo.png"
+            src="/images/logo.png"
             alt="Karthikeya Constructions logo"
-            className="h-14 w-auto -my-1 object-contain md:h-16"
+            className="h-20 w-auto -my-2 object-contain md:h-24 md:-my-3"
           />
-        </div>
+        </NavLink>
         <div className="hidden lg:block text-brand">{renderLinks()}</div>
         <button
           className="text-2xl text-brand lg:hidden"

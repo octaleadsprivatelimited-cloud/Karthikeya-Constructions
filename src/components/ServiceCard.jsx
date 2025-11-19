@@ -1,5 +1,6 @@
 const ServiceCard = ({
   icon: Icon,
+  image,
   title,
   description,
   highlights,
@@ -30,9 +31,17 @@ const ServiceCard = ({
 
   return (
     <article className={containerClasses}>
-      <div className={iconWrapperClasses}>
-        <Icon className="text-2xl" />
-      </div>
+      {image ? (
+        <div className="overflow-hidden rounded-2xl border border-brand/10">
+          <img src={image} alt={title} className="h-52 w-full object-cover" loading="lazy" />
+        </div>
+      ) : (
+        Icon && (
+          <div className={iconWrapperClasses}>
+            <Icon className="text-2xl" />
+          </div>
+        )
+      )}
       <h3 className={titleClasses}>{title}</h3>
       <p className={descriptionClasses}>{description}</p>
       {highlights && showHighlights && (

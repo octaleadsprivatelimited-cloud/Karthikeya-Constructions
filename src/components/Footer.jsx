@@ -9,13 +9,15 @@ const Footer = () => {
     <footer className="bg-brand text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4 md:px-8">
         <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/images/brand-logo.png"
-              alt="Karthikeya Constructions logo"
-              className="h-14 w-auto object-contain md:h-16"
-            />
-          </div>
+          <NavLink to="/" className="flex items-center gap-3">
+            <div className="rounded-lg bg-white p-2 shadow-lg">
+              <img
+                src="/images/logo.png"
+                alt="Karthikeya Constructions logo"
+                className="h-12 w-auto object-contain md:h-16"
+              />
+            </div>
+          </NavLink>
           <p className="text-sm leading-relaxed text-white/70">
             Premium interior design and construction solutions across residential,
             commercial, and hospitality sectors. We transform spaces with precision,
@@ -34,11 +36,8 @@ const Footer = () => {
             <NavLink to="/about" className="transition hover:text-white">
               About
             </NavLink>
-            <NavLink to="/interior" className="transition hover:text-white">
-              Interior
-            </NavLink>
-            <NavLink to="/construction" className="transition hover:text-white">
-              Construction
+            <NavLink to="/services" className="transition hover:text-white">
+              Services
             </NavLink>
             <NavLink to="/gallery" className="transition hover:text-white">
               Gallery

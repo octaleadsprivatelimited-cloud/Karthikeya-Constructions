@@ -4,6 +4,40 @@ import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data/siteContent";
 
+// Services from home page - matching serviceCatalog
+const homePageServices = [
+  {
+    title: "Building Constructions",
+    description: "From residential to commercial projects, we construct spaces with precision, ensuring durability and style.",
+    image: "/images/building-constructions.webp",
+  },
+  {
+    title: "Architectural Design",
+    description: "Our architects blend creativity with functionality to design spaces that inspire and impress.",
+    image: "/images/architectural-design.webp",
+  },
+  {
+    title: "Interiors",
+    description: "Transform your interiors into stunning, functional spaces that reflect your personality and lifestyle.",
+    image: "/images/interiors.webp",
+  },
+  {
+    title: "PMC (Project Management Consultancy)",
+    description: "Experience seamless project execution with our expert management services—every detail handled with care.",
+    image: "/images/pmc-project-management-consultancy.jpeg",
+  },
+  {
+    title: "Engineering & Contracting",
+    description: "Our experienced engineers and contractors work collaboratively to deliver top-notch quality for every build.",
+    image: "/images/engineering-contracting.jpeg",
+  },
+  {
+    title: "Renovation & Remodeling",
+    description: "Reimagine existing spaces with innovative renovation solutions, adding value and comfort to your property.",
+    image: "/images/renovation-remodeling.webp",
+  },
+];
+
 const processSteps = [
   {
     title: "Discovery & Brief",
@@ -51,12 +85,24 @@ const Services = () => {
 
       <section className="mx-auto w-full max-w-6xl px-6 md:px-8">
         <SectionHeading
-          eyebrow="What We Do"
+          eyebrow="Our Services"
           title="End-to-end project ownership for residential, commercial, and industrial environments."
+          description="Complete design-build solutions covering architecture, interiors, civil contracting, and project management."
         />
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+          {homePageServices.map((service) => (
+            <article
+              key={service.title}
+              className="group flex h-full flex-col rounded-3xl border border-brand/10 bg-white/80 p-8 shadow-[0_18px_40px_rgba(10,32,51,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(10,32,51,0.14)]"
+            >
+              {service.image && (
+                <div className="overflow-hidden rounded-2xl border border-brand/10">
+                  <img src={service.image} alt={service.title} className="h-52 w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
+                </div>
+              )}
+              <h3 className="mt-6 text-xl font-semibold text-brand">{service.title}</h3>
+              <p className="mt-3 flex-1 text-sm text-brand/70">{service.description}</p>
+            </article>
           ))}
         </div>
       </section>
