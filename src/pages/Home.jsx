@@ -285,9 +285,9 @@ const Home = () => {
         </div>
 
       {/* About */}
-      <section className="fade-up mx-auto mt-20 w-full max-w-6xl px-6 py-6 md:px-10 md:py-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(15,23,42,0.18)]">
+      <section className="fade-up mx-auto mt-12 w-full max-w-6xl px-4 py-6 md:mt-20 md:px-6 md:py-10 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div className="overflow-hidden rounded-[24px] shadow-[0_30px_70px_rgba(15,23,42,0.18)] md:rounded-[32px]">
             <img
               src="/images/adobe-stock-375645065.jpeg"
               alt="Professional construction project"
@@ -297,26 +297,26 @@ const Home = () => {
             />
             </div>
 
-          <div className="space-y-6 text-slate-900">
-            <p className="text-sm font-semibold uppercase tracking-[0.45em] text-brand-accent">About Us</p>
-            <h2 className="text-4xl font-semibold leading-tight uppercase md:text-[42px]">
+          <div className="space-y-4 text-slate-900 md:space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-accent md:text-sm md:tracking-[0.45em]">About Us</p>
+            <h2 className="text-2xl font-semibold leading-tight uppercase md:text-4xl md:text-[42px]">
               Turning Visions Into Reality With A Legacy Of Quality And Trust.
             </h2>
-            <p className="max-w-2xl text-base text-slate-600">
+            <p className="text-sm text-slate-600 md:max-w-2xl md:text-base">
               Karthikeya Constructions specializes in delivering superior construction, design, and project management
               services. Our experienced team of architects, engineers, and interior designers works passionately to build
               spaces that inspire.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col gap-3 pt-4 sm:flex-row sm:flex-wrap">
               <Link
                 to="/about"
-                className="rounded-full bg-brand-accent px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-brand-accent/90"
+                className="w-full rounded-full bg-brand-accent px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-brand-accent/90 sm:w-auto sm:px-10 sm:py-3 sm:text-sm"
               >
                 Read More
               </Link>
           <Link
                 to="/contact"
-                className="rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-slate-800"
+                className="w-full rounded-full bg-slate-900 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-slate-800 sm:w-auto sm:px-10 sm:py-3 sm:text-sm"
           >
                 Contact Us
           </Link>
@@ -326,27 +326,27 @@ const Home = () => {
       </section>
 
       {/* Services */}
-      <section className="fade-up mt-16 bg-[#11111a] py-20 text-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-6 text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand-accent">Our Services</p>
-          <h2 className="text-3xl font-semibold md:text-4xl">Provided Features</h2>
-          <p className="max-w-3xl text-sm text-white/70 md:text-base">
+      <section className="fade-up mt-12 bg-[#11111a] py-12 text-white md:mt-16 md:py-20">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 text-center md:gap-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-brand-accent md:text-[11px] md:tracking-[0.4em]">Our Services</p>
+          <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">Provided Features</h2>
+          <p className="max-w-3xl text-xs text-white/70 md:text-sm lg:text-base">
             Construction, design, interiors, and PMC come together under one roof so that your project feels seamless
             from the first draft to handover.
           </p>
         </div>
-        <div className="mx-auto mt-12 grid w-full max-w-6xl gap-8 px-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-8 grid w-full max-w-6xl gap-6 px-4 md:mt-12 md:gap-8 md:px-6 md:grid-cols-2 lg:grid-cols-3">
           {serviceCatalog.map((service) => (
             <article
               key={service.title}
-              className="flex flex-col rounded-[28px] bg-[#1c1c27] p-4 text-center shadow-[0_25px_70px_rgba(0,0,0,0.35)]"
+              className="flex flex-col rounded-[24px] bg-[#1c1c27] p-3 text-center shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:rounded-[28px] md:p-4"
             >
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-                <img src={service.image} alt={service.title} className="h-52 w-full object-cover" loading="lazy" />
+                <img src={service.image} alt={service.title} className="h-48 w-full object-cover md:h-52" loading="lazy" />
                 </div>
-              <div className="mt-5 space-y-2 px-2 pb-2">
-                <h3 className="text-base font-semibold uppercase tracking-[0.05em]">{service.title}</h3>
-                <p className="text-sm text-white/70">{service.description}</p>
+              <div className="mt-4 space-y-2 px-2 pb-2 md:mt-5">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.05em] md:text-base">{service.title}</h3>
+                <p className="text-xs text-white/70 md:text-sm">{service.description}</p>
               </div>
             </article>
           ))}
@@ -354,29 +354,29 @@ const Home = () => {
       </section>
 
       {/* Packages */}
-      <section className="fade-up mt-16 bg-[#e8e1df] py-16">
-        <div className="mx-auto w-full max-w-6xl px-6">
+      <section className="fade-up mt-12 bg-[#e8e1df] py-12 md:mt-16 md:py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
           <div className="text-center text-brand">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand/60">Home Construction Packages</p>
-            <h2 className="mt-2 text-2xl font-semibold text-[#1e1e1e]">Home Construction Packages</h2>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-brand/60 md:text-[11px] md:tracking-[0.4em]">Home Construction Packages</p>
+            <h2 className="mt-2 text-xl font-semibold text-[#1e1e1e] md:text-2xl">Home Construction Packages</h2>
       </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:mt-10 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {constructionPackages.map((pkg) => (
-              <article key={pkg.tier} className="rounded-[26px] bg-white p-6 shadow-[0_25px_45px_rgba(0,0,0,0.12)]">
-                <div className="rounded-full bg-[#f2f2f2] py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-[#1e1e1e] shadow-inner">
+              <article key={pkg.tier} className="rounded-[24px] bg-white p-4 shadow-[0_25px_45px_rgba(0,0,0,0.12)] md:rounded-[26px] md:p-6">
+                <div className="rounded-full bg-[#f2f2f2] py-2 text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#1e1e1e] shadow-inner md:py-3 md:text-sm">
                   {pkg.price}
         </div>
-                <h3 className="mt-6 text-center text-lg font-semibold text-[#1e1e1e]">{pkg.tier}</h3>
-                <ul className="mt-5 space-y-3 text-sm text-[#4b4b4b]">
+                <h3 className="mt-4 text-center text-base font-semibold text-[#1e1e1e] md:mt-6 md:text-lg">{pkg.tier}</h3>
+                <ul className="mt-4 space-y-2 text-xs text-[#4b4b4b] md:mt-5 md:space-y-3 md:text-sm">
                   {pkg.inclusions.map((item) => (
-                    <li key={item} className="border-b border-[#ececec] pb-2 last:border-b-0">
+                    <li key={item} className="border-b border-[#ececec] pb-1.5 last:border-b-0 md:pb-2">
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link
                   to="/contact"
-                  className="mt-6 block rounded-full bg-[#f6a700] py-2 text-center text-xs font-semibold uppercase tracking-[0.35em] text-white transition hover:bg-[#e29100]"
+                  className="mt-4 block rounded-full bg-[#f6a700] py-2 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#e29100] md:mt-6 md:text-xs md:tracking-[0.35em]"
                 >
                   Book Now
                 </Link>
@@ -387,9 +387,9 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl px-6 md:px-10">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-          <div className="overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(15,23,42,0.15)]">
+      <section className="fade-up mx-auto mt-12 w-full max-w-6xl px-4 md:mt-16 md:px-6 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center lg:gap-10">
+          <div className="overflow-hidden rounded-[24px] shadow-[0_30px_70px_rgba(15,23,42,0.15)] md:rounded-[32px]">
             <img
               src="/images/adobe-stock-406163205.jpeg"
               alt="Professional construction project showcasing excellence"
@@ -398,11 +398,11 @@ const Home = () => {
             />
                   </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-brand-accent">Why Choose Us?</p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-accent md:text-sm md:tracking-[0.4em]">Why Choose Us?</p>
+            <h2 className="mt-2 text-2xl font-semibold leading-tight text-slate-900 md:mt-3 md:text-3xl lg:text-4xl">
               Building Excellence With Expertise, Innovation, And Dedication.
             </h2>
-            <div className="mt-8 divide-y divide-[#e4e7ec] border-y border-[#e4e7ec]">
+            <div className="mt-6 divide-y divide-[#e4e7ec] border-y border-[#e4e7ec] md:mt-8">
               {[
                 "Uncompromising Quality",
                 "Experienced Professionals",
@@ -410,9 +410,9 @@ const Home = () => {
                 "Timely Completion",
                 "Transparent Communication",
               ].map((item) => (
-                <div key={item} className="flex items-center justify-between py-4">
-                  <span className="text-sm font-semibold text-[#2b2f3a]">{item}</span>
-                  <span className="text-lg text-[#2b2f3a]">▸</span>
+                <div key={item} className="flex items-center justify-between py-3 md:py-4">
+                  <span className="text-xs font-semibold text-[#2b2f3a] md:text-sm">{item}</span>
+                  <span className="text-base text-[#2b2f3a] md:text-lg">▸</span>
             </div>
           ))}
             </div>
@@ -421,7 +421,7 @@ const Home = () => {
       </section>
 
       {/* Achievements */}
-      <section className="fade-up relative mt-16 w-full bg-[#0f0f16] py-20 text-white">
+      <section className="fade-up relative mt-12 w-full bg-[#0f0f16] py-12 text-white md:mt-16 md:py-20">
         <img
           src="/images/construction-site-2.avif"
           alt="Modern construction site"
@@ -430,25 +430,25 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-black/45" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand-accent">
+        <div className="relative mx-auto w-full max-w-6xl px-4 text-center md:px-6">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-brand-accent md:text-[11px] md:tracking-[0.4em]">
             Our Achievements at a Glance
           </p>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="mt-2 text-xl font-semibold leading-tight md:mt-3 md:text-3xl lg:text-4xl">
             Proud Milestones That Reflect Our Dedication And Expertise
           </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-4 md:mt-12 md:grid-cols-4 md:gap-6">
             {achievements.map((item) => (
               <div
                 key={item.label}
-                className="rounded-[24px] bg-white/10 px-6 py-10 text-center backdrop-blur-md"
+                className="rounded-[20px] bg-white/10 px-4 py-6 text-center backdrop-blur-md md:rounded-[24px] md:px-6 md:py-10"
               >
-                <p className="text-4xl font-semibold">
+                <p className="text-2xl font-semibold md:text-4xl">
                   {item.value}
-                  <span className="text-2xl align-super">+</span>
+                  <span className="text-lg align-super md:text-2xl">+</span>
                 </p>
-                <p className="mt-4 text-sm text-white/80">{item.label}</p>
-                <div className="mt-6 h-1 w-12 mx-auto rounded-full bg-brand-accent" />
+                <p className="mt-2 text-xs text-white/80 md:mt-4 md:text-sm">{item.label}</p>
+                <div className="mt-4 h-1 w-8 mx-auto rounded-full bg-brand-accent md:mt-6 md:w-12" />
                   </div>
                 ))}
           </div>
@@ -456,7 +456,7 @@ const Home = () => {
       </section>
 
       {/* Gallery */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl px-6 py-16 text-brand md:px-12">
+      <section className="fade-up mx-auto mt-12 w-full max-w-6xl px-4 py-12 text-brand md:mt-16 md:px-6 md:py-16 lg:px-12">
         <SectionHeading
           eyebrow="Our Gallery"
           title="The works we are proud of."
@@ -464,105 +464,105 @@ const Home = () => {
           align="left"
           tone="light"
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 md:mt-12">
           {galleryHighlights.map((item) => (
             <figure
               key={item.title}
-              className="group relative overflow-hidden rounded-3xl bg-[#f8fafc] ring-1 ring-brand/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 hover:ring-brand/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+              className="group relative overflow-hidden rounded-2xl bg-[#f8fafc] ring-1 ring-brand/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 hover:ring-brand/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] md:rounded-3xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
+                          loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                />
+                        />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              </div>
+                      </div>
             </figure>
           ))}
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="fade-up mx-auto mt-16 w-full max-w-6xl px-6 py-12 text-center md:px-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-brand-accent">Testimonial</p>
-        <h2 className="mt-3 text-3xl font-semibold text-[#0a2540] md:text-4xl">
+      <section className="fade-up mx-auto mt-12 w-full max-w-6xl px-4 py-10 text-center md:mt-16 md:px-6 md:py-12 lg:px-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-accent md:text-sm md:tracking-[0.4em]">Testimonial</p>
+        <h2 className="mt-2 text-xl font-semibold text-[#0a2540] md:mt-3 md:text-3xl lg:text-4xl">
           We Care About Our Customers Experience Too
               </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:mt-12 md:gap-6 md:grid-cols-3">
           {testimonials.slice(0, 3).map((testimonial, index) => (
                   <article
               key={testimonial.name}
-              className="group relative overflow-hidden rounded-2xl bg-[#1a1a1a] p-6 text-white transition-all duration-300 hover:bg-brand-accent"
+              className="group relative overflow-hidden rounded-xl bg-[#1a1a1a] p-4 text-white transition-all duration-300 hover:bg-brand-accent md:rounded-2xl md:p-6"
             >
-              <p className="mb-6 text-sm leading-relaxed text-white/90">{testimonial.quote}</p>
-              <div className="mb-4 h-px w-full bg-white/20" />
+              <p className="mb-4 text-xs leading-relaxed text-white/90 md:mb-6 md:text-sm">{testimonial.quote}</p>
+              <div className="mb-3 h-px w-full bg-white/20 md:mb-4" />
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium uppercase tracking-[0.2em]">Client</span>
-                <div className="flex items-center gap-1">
+                <span className="text-xs font-medium uppercase tracking-[0.2em] md:text-sm">Client</span>
+                <div className="flex items-center gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <FaStar key={i} className="text-xs" />
+                    <FaStar key={i} className="text-[10px] md:text-xs" />
               ))}
             </div>
           </div>
-                </article>
+            </article>
               ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="fade-up relative my-16 w-full overflow-hidden">
+      <section className="fade-up relative my-12 w-full overflow-hidden md:my-16">
         <img
           src="/images/construction-site-1.avif"
           alt="Construction site background"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-16 md:px-10">
-          <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr]">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 md:px-6 md:py-16 lg:px-10">
+          <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] md:gap-10">
             <div className="text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">Where Style Meets Functionality</p>
-              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Transforming spaces, elevating lives.</h2>
-              <p className="mt-4 text-sm text-white/85">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/80 md:text-xs md:tracking-[0.3em]">Where Style Meets Functionality</p>
+              <h2 className="mt-2 text-xl font-semibold text-white md:mt-3 md:text-3xl lg:text-4xl">Transforming spaces, elevating lives.</h2>
+              <p className="mt-3 text-xs text-white/85 md:mt-4 md:text-sm">
                 Share your plot details and our team will schedule a consultation to walk you through designs, timelines, and budgets.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-white/80">
+              <ul className="mt-4 space-y-1.5 text-xs text-white/80 md:mt-6 md:space-y-2 md:text-sm">
                 <li>• Personalised concepts for villas, apartments, and commercial sites</li>
                 <li>• Transparent packages with branded materials</li>
                 <li>• Dedicated support even after handover</li>
               </ul>
             </div>
-            <form className="space-y-4 rounded-3xl bg-[#1a1a1a]/95 p-6 backdrop-blur-sm">
+            <form className="space-y-3 rounded-2xl bg-[#1a1a1a]/95 p-4 backdrop-blur-sm md:rounded-3xl md:space-y-4 md:p-6">
               <div>
-                <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">First Name</label>
+                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">First Name</label>
                 <input
                   type="text"
                   placeholder="Enter your name"
-                  className="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20"
+                  className="mt-1.5 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
-            </div>
+              </div>
               <div>
-                <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Phone Number</label>
+                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Phone Number</label>
                 <input
                   type="tel"
                   placeholder="+91 00000 00000"
-                  className="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20"
+                  className="mt-1.5 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
-          </div>
+              </div>
               <div>
-                <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Location of Your Plot</label>
+                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Location of Your Plot</label>
                 <textarea
                   placeholder="City or neighbourhood"
                   rows={3}
-                  className="mt-2 w-full resize-none rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20"
+                  className="mt-1.5 w-full resize-none rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
-          </div>
+              </div>
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-brand-accent px-4 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_45px_rgba(6,167,215,0.35)] transition hover:bg-brand-accent/90"
+                className="w-full rounded-xl bg-brand-accent px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-[0_20px_45px_rgba(6,167,215,0.35)] transition hover:bg-brand-accent/90 md:rounded-2xl md:py-3 md:text-sm md:tracking-[0.3em]"
               >
                 Submit
               </button>

@@ -17,13 +17,13 @@ const Navbar = () => {
   const closeMenu = () => setOpen(false);
 
   const renderLinks = (direction = "row") => (
-    <nav className={`flex ${direction === "column" ? "flex-col space-y-6" : "items-center gap-8"}`}>
+    <nav className={`flex ${direction === "column" ? "flex-col space-y-4 md:space-y-6" : "items-center gap-6 md:gap-8"}`}>
       {navItems.map((item) => (
         <NavLink
           key={item.label}
           to={item.to}
           onClick={closeMenu}
-          className="text-sm font-medium uppercase tracking-[0.2em] text-brand/80 transition-colors duration-300 hover:text-brand"
+          className={`font-medium uppercase tracking-[0.2em] text-brand/80 transition-colors duration-300 hover:text-brand ${direction === "column" ? "text-base md:text-sm" : "text-sm"}`}
         >
           {item.label}
         </NavLink>
@@ -31,7 +31,7 @@ const Navbar = () => {
       <NavLink
         to="/contact"
         onClick={closeMenu}
-        className="rounded-full border border-brand px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-brand transition-all duration-300 hover:bg-brand hover:text-white"
+        className={`rounded-full border border-brand font-semibold uppercase tracking-[0.2em] text-brand transition-all duration-300 hover:bg-brand hover:text-white ${direction === "column" ? "px-6 py-2.5 text-base md:px-5 md:py-2 md:text-sm" : "px-5 py-2 text-sm"}`}
       >
         Enquire Now
       </NavLink>
