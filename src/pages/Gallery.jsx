@@ -213,22 +213,22 @@ const Gallery = () => {
               </div>
             </div>
 
-            <div className="relative mt-8 rounded-2xl bg-[#f8fafc] p-3 md:mt-12 md:rounded-3xl md:p-4">
+            <div className="relative mt-6 rounded-xl bg-[#f8fafc] p-2 md:mt-12 md:rounded-2xl md:p-3 lg:rounded-3xl lg:p-4">
               <ProjectShowcase />
             </div>
           </div>
         </section>
 
-        <section className="fade-up bg-white py-12 md:py-24">
+        <section className="fade-up bg-white py-8 md:py-12 lg:py-24">
           <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8">
-            <div className="rounded-2xl bg-white px-5 py-8 text-brand md:rounded-3xl md:px-8 md:py-12 lg:px-12">
-              <div className="space-y-8 md:space-y-10">
-                <div className="grid gap-6 md:flex md:items-center md:justify-between">
-                  <div className="max-w-2xl space-y-3 md:space-y-4">
+            <div className="rounded-xl bg-white px-4 py-6 text-brand md:rounded-2xl md:px-5 md:py-8 lg:rounded-3xl lg:px-8 lg:py-12">
+              <div className="space-y-6 md:space-y-8 lg:space-y-10">
+                <div className="space-y-4 md:grid md:grid-cols-2 md:items-center md:gap-6 md:space-y-0 lg:flex lg:justify-between">
+                  <div className="max-w-2xl space-y-2 md:space-y-3 lg:space-y-4">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-brand/60 md:text-[11px] md:tracking-[0.4em]">
                       Project Gallery
                     </p>
-                    <h2 className="text-2xl font-semibold leading-tight text-brand md:text-3xl lg:text-4xl">
+                    <h2 className="text-xl font-semibold leading-tight text-brand md:text-2xl lg:text-3xl xl:text-4xl">
                       A glimpse into our portfolio of crafted spaces.
                     </h2>
                     <p className="text-xs text-brand/70 md:text-sm lg:text-base">
@@ -236,45 +236,50 @@ const Gallery = () => {
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-brand/60 md:gap-3 md:text-[11px]">
-                    <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 md:px-4 md:py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2">
                       Show All
                     </span>
-                    <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 md:px-4 md:py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2">
                       Architecture
                     </span>
-                    <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 md:px-4 md:py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2">
                       Interiors
                     </span>
-                    <span className="rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 md:px-4 md:py-2">
+                    <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2">
                       Retail
                     </span>
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+                <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 sm:gap-4 md:gap-6 lg:grid-cols-3">
                   {galleryImages.map((item, index) => (
                     <figure
                       key={item.title}
-                      className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-brand/10 transition duration-500 hover:-translate-y-2 hover:ring-brand/30 md:rounded-3xl"
+                      className="group relative overflow-hidden rounded-xl bg-white ring-1 ring-brand/10 transition duration-500 hover:-translate-y-2 hover:ring-brand/30 md:rounded-2xl lg:rounded-3xl"
                     >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="h-56 w-full object-cover transition duration-700 group-hover:scale-110 md:h-72"
-                        loading="lazy"
-                      />
-                      <figcaption className="absolute inset-0 flex flex-col justify-end p-4 text-brand md:p-6">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                          loading={index < 6 ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchPriority={index < 3 ? "high" : "low"}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      </div>
+                      <figcaption className="absolute inset-0 flex flex-col justify-end p-3 text-brand md:p-4 lg:p-6">
                         <div className="opacity-0 transition duration-500 group-hover:opacity-100">
-                          <div className="rounded-xl border border-brand/10 bg-white/95 p-4 shadow-[0_12px_32px_rgba(15,23,42,0.18)] backdrop-blur md:rounded-2xl md:p-5">
-                            <h3 className="text-base font-medium text-brand md:text-xl" style={{ fontFamily: "Outfit, sans-serif" }}>
+                          <div className="rounded-lg border border-brand/10 bg-white/95 p-3 shadow-[0_12px_32px_rgba(15,23,42,0.18)] backdrop-blur md:rounded-xl md:p-4 lg:rounded-2xl lg:p-5">
+                            <h3 className="text-sm font-medium text-brand md:text-base lg:text-xl" style={{ fontFamily: "Outfit, sans-serif" }}>
                               {item.title}
                             </h3>
-                            <p className="mt-1.5 text-xs text-brand/70 md:mt-2 md:text-sm">{item.description}</p>
-                            <div className="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-brand/55 md:mt-4 md:gap-2 md:text-[11px]">
-                              <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-0.5 md:px-3 md:py-1">
+                            <p className="mt-1 text-[10px] text-brand/70 md:mt-1.5 md:text-xs lg:mt-2 lg:text-sm">{item.description}</p>
+                            <div className="mt-2 flex flex-wrap gap-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-brand/55 md:mt-3 md:gap-1.5 md:text-[10px] lg:mt-4 lg:gap-2 lg:text-[11px]">
+                              <span className="rounded-full border border-brand/20 bg-brand/5 px-2 py-0.5 md:px-2.5 md:py-0.5 lg:px-3 lg:py-1">
                                 VR Preview
                               </span>
-                              <span className="rounded-full border border-brand/20 bg-brand/5 px-2.5 py-0.5 md:px-3 md:py-1">
+                              <span className="rounded-full border border-brand/20 bg-brand/5 px-2 py-0.5 md:px-2.5 md:py-0.5 lg:px-3 lg:py-1">
                                 Material Boards
                               </span>
                             </div>
@@ -289,16 +294,16 @@ const Gallery = () => {
           </div>
         </section>
 
-        <section className="fade-up mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 pb-24 text-center text-brand md:px-8">
+        <section className="fade-up mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-4 pb-12 text-center text-brand md:gap-6 md:px-6 md:pb-24 lg:px-8">
           <SectionHeading
             eyebrow="Need a Custom Walkthrough?"
             title="Request a personalized presentation of relevant case studies."
-            description="Share your project goals and we’ll curate a detailed deck with floor plans, finishes, and investment breakdowns tailored to your requirements."
+            description="Share your project goals and we'll curate a detailed deck with floor plans, finishes, and investment breakdowns tailored to your requirements."
             tone="light"
           />
           <Link
             to="/contact"
-            className="rounded-full border border-brand px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white"
+            className="rounded-full border border-brand px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-brand transition hover:bg-brand hover:text-white md:px-8 md:py-3 md:text-sm"
           >
             Schedule A Presentation
           </Link>

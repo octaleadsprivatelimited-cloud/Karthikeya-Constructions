@@ -190,12 +190,13 @@ const Home = () => {
         image="/images/hero-whatsapp.jpg"
       />
       {/* Hero */}
-      <section className="fade-up relative isolate min-h-[600px] overflow-hidden border-b border-white/5 bg-slate-900 text-white md:min-h-[700px]">
+      <section className="fade-up relative isolate min-h-[500px] overflow-hidden border-b border-white/5 bg-slate-900 text-white md:min-h-[600px] lg:min-h-[700px]">
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source src="/images/hero-video.mp4" type="video/mp4" />

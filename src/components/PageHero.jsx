@@ -1,7 +1,7 @@
 const PageHero = ({ title, description, background }) => {
   return (
     <section
-      className="relative flex min-h-[45vh] items-center justify-center overflow-hidden bg-brand text-white"
+      className="relative flex min-h-[35vh] items-center justify-center overflow-hidden bg-brand text-white md:min-h-[45vh]"
       style={
         background
           ? {
@@ -12,10 +12,10 @@ const PageHero = ({ title, description, background }) => {
           : undefined
       }
     >
-      <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center md:px-8">
-        <p className="text-xs uppercase tracking-[0.4em] text-brand-accent">Karthikeya Constructions</p>
-        <h1 className="mt-4 text-4xl font-semibold md:text-5xl">{title}</h1>
-        {description && <p className="mt-6 text-base text-white/70 md:text-lg">{description}</p>}
+      <div className="relative z-10 mx-auto max-w-3xl px-4 py-16 text-center md:px-6 md:py-24 lg:px-8">
+        <p className="text-[10px] uppercase tracking-[0.35em] text-brand-accent md:text-xs md:tracking-[0.4em]">Karthikeya Constructions</p>
+        <h1 className="mt-3 text-2xl font-semibold md:mt-4 md:text-4xl lg:text-5xl">{title}</h1>
+        {description && <p className="mt-4 text-sm text-white/70 md:mt-6 md:text-base lg:text-lg">{description}</p>}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-brand/40 via-brand/20 to-transparent" aria-hidden />
     </section>
