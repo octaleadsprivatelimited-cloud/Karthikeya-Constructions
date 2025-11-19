@@ -213,7 +213,7 @@ const Gallery = () => {
               </div>
             </div>
 
-            <div className="relative mt-6 rounded-xl bg-[#f8fafc] p-2 md:mt-12 md:rounded-2xl md:p-3 lg:rounded-3xl lg:p-4">
+            <div className="relative mt-6 hidden rounded-xl bg-[#f8fafc] p-2 md:mt-12 md:block md:rounded-2xl md:p-3 lg:rounded-3xl lg:p-4">
               <ProjectShowcase />
             </div>
           </div>
