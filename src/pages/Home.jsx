@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
@@ -59,46 +60,46 @@ const serviceCatalog = [
 const constructionPackages = [
   {
     tier: "Premium Signature Package",
-    price: "Rs. 2,249/sq.ft",
+    price: "2,200/-",
     inclusions: [
-      "M-Sand aggregates + FE500/FE550D steel",
-      "Bathroom wall tiles up to Rs.80/sq.ft",
-      "Internal flooring up to Rs.120/sq.ft",
-      "Havells/GM switches with Polycab wiring",
-      "Sanitary fittings worth Rs.40,000 per bathroom",
+      "Steel: TATA / JSW",
+      "Cement: Ultratech",
+      "Bricks: Karimnagar 1st class",
+      "Flooring: Rs.120/- per sft",
+      "Sanitary fittings: 45,000/- per toilet",
     ],
   },
   {
     tier: "Elite Comfort Package",
-    price: "Rs. 2,149/sq.ft",
+    price: "1,985/-",
     inclusions: [
-      "Premium kitchen sink up to Rs.10,000",
-      "Bathroom wall tiles up to Rs.60/sq.ft",
-      "Internal flooring up to Rs.100/sq.ft",
-      "Burma Border / Red Sal main door",
-      "CPVC/UPVC by Ashirwad & Supreme",
+      "Steel: TATA / JSW",
+      "Cement: Ultratech",
+      "Bricks: Karimnagar Red bricks",
+      "Flooring: Rs.85/- per sft",
+      "Sanitary fittings: 35,000/- per toilet",
     ],
   },
   {
     tier: "Smart Value Package",
-    price: "Rs. 1,949/sq.ft",
+    price: "1,785/-",
     inclusions: [
-      "Bathroom wall tiles up to Rs.55/sq.ft",
-      "Parking tiles up to Rs.50/sq.ft",
-      "Staircase flooring up to Rs.70/sq.ft",
-      "Main door in Burma Border / WPC",
-      "Sanitary fittings worth Rs.20,000 per bathroom",
+      "Steel: SHREE / RADHA",
+      "Cement: Ultratech",
+      "Bricks: Karimnagar Red bricks",
+      "Flooring: Rs.65/- per sft",
+      "Sanitary fittings: 30,000/- per toilet",
     ],
   },
   {
     tier: "Essential Starter Package",
-    price: "Rs. 1,749/sq.ft",
+    price: "1,685/-",
     inclusions: [
-      "Bathroom wall tiles up to Rs.40/sq.ft",
-      "Internal flooring up to Rs.50/sq.ft",
-      "Ghana Teak / Neem wood main door",
-      "Hi-Fi / GM switches with Maharaja wiring",
-      "Sanitary fittings worth Rs.15,000 per bathroom",
+      "Steel: SHREE / RADHA",
+      "Cement: Ultratech",
+      "Bricks: Red bricks",
+      "Flooring: Rs.50/- per sft",
+      "Sanitary fittings: 20,000/- per toilet",
     ],
   },
 ];
@@ -168,8 +169,55 @@ const galleryHighlights = [
   },
 ];
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/movrpned";
+
 const Home = () => {
   useInViewAnimation();
+  const [formState, setFormState] = useState({
+    firstName: "",
+    phone: "",
+    location: "",
+  });
+  const [formStatus, setFormStatus] = useState({ type: null, message: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setFormStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message: "Thank you! Our team will connect with you soon.",
+        });
+        setFormState({ firstName: "", phone: "", location: "" });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message: "Something went wrong. Please try again or call us directly.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <main className="bg-white text-brand">
@@ -538,36 +586,61 @@ const Home = () => {
                 <li>• Dedicated support even after handover</li>
               </ul>
             </div>
-            <form className="space-y-3 rounded-2xl bg-[#1a1a1a]/95 p-4 backdrop-blur-sm md:rounded-3xl md:space-y-4 md:p-6">
+            <form onSubmit={handleFormSubmit} className="space-y-3 rounded-2xl bg-[#1a1a1a]/95 p-4 backdrop-blur-sm md:rounded-3xl md:space-y-4 md:p-6">
               <div>
-                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">First Name</label>
+                <label htmlFor="firstName" className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">First Name</label>
                 <input
+                  id="firstName"
+                  name="firstName"
                   type="text"
+                  value={formState.firstName}
+                  onChange={handleFormChange}
+                  required
                   placeholder="Enter your name"
                   className="mt-1.5 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Phone Number</label>
+                <label htmlFor="phone" className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Phone Number</label>
                 <input
+                  id="phone"
+                  name="phone"
                   type="tel"
+                  value={formState.phone}
+                  onChange={handleFormChange}
+                  required
                   placeholder="+91 00000 00000"
                   className="mt-1.5 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Location of Your Plot</label>
+                <label htmlFor="location" className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 md:text-xs md:tracking-[0.3em]">Location of Your Plot</label>
                 <textarea
+                  id="location"
+                  name="location"
+                  value={formState.location}
+                  onChange={handleFormChange}
+                  required
                   placeholder="City or neighbourhood"
                   rows={3}
                   className="mt-1.5 w-full resize-none rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-xs text-white placeholder:text-white/50 outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 md:mt-2 md:rounded-2xl md:px-4 md:py-3 md:text-sm"
                 />
               </div>
+              {formStatus.type && (
+                <p
+                  className={`text-xs md:text-sm ${
+                    formStatus.type === "success" ? "text-green-400" : "text-red-400"
+                  }`}
+                >
+                  {formStatus.message}
+                </p>
+              )}
               <button
                 type="submit"
-                className="w-full rounded-xl bg-brand-accent px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-[0_20px_45px_rgba(6,167,215,0.35)] transition hover:bg-brand-accent/90 md:rounded-2xl md:py-3 md:text-sm md:tracking-[0.3em]"
+                disabled={submitting}
+                className="w-full rounded-xl bg-brand-accent px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-[0_20px_45px_rgba(6,167,215,0.35)] transition hover:bg-brand-accent/90 disabled:cursor-not-allowed disabled:opacity-70 md:rounded-2xl md:py-3 md:text-sm md:tracking-[0.3em]"
               >
-                Submit
+                {submitting ? "Sending..." : "Submit"}
               </button>
             </form>
           </div>

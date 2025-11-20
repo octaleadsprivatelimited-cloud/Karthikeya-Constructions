@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwpekpkr";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/movrpned";
 
 const ContactForm = () => {
   const [formState, setFormState] = useState({

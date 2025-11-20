@@ -374,7 +374,7 @@ export const contactDetails = {
     "1-1-259/138, Srinivasa Nagar Colony, beside Max Show Room, Brindavan Colony, Kapra, Secunderabad, Telangana 500062, India",
   phonePrimary: "+91 70137 94781",
   phoneSecondary: "+91 70137 94781",
-  email: "kaarthikeyaaconstructions@gmail.com",
+  email: "kaarthekeyaaconstructions@gmail.com",
   workHours: "Mon to Sat - 9:00 AM to 7:00 PM",
 };
 
