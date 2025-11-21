@@ -66,7 +66,7 @@ const constructionPackages = [
       "Cement: Ultratech",
       "Bricks: Karimnagar 1st class",
       "Flooring: Rs.120/- per sft",
-      "Sanitary fittings: 45,000/- per toilet",
+      "Sanitary fittings: 45,000/- per bathroom",
     ],
   },
   {
@@ -77,7 +77,7 @@ const constructionPackages = [
       "Cement: Ultratech",
       "Bricks: Karimnagar Red bricks",
       "Flooring: Rs.85/- per sft",
-      "Sanitary fittings: 35,000/- per toilet",
+      "Sanitary fittings: 35,000/- per bathroom",
     ],
   },
   {
@@ -88,7 +88,7 @@ const constructionPackages = [
       "Cement: Ultratech",
       "Bricks: Karimnagar Red bricks",
       "Flooring: Rs.65/- per sft",
-      "Sanitary fittings: 30,000/- per toilet",
+      "Sanitary fittings: 30,000/- per bathroom",
     ],
   },
   {
@@ -99,7 +99,7 @@ const constructionPackages = [
       "Cement: Ultratech",
       "Bricks: Red bricks",
       "Flooring: Rs.50/- per sft",
-      "Sanitary fittings: 20,000/- per toilet",
+      "Sanitary fittings: 20,000/- per bathroom",
     ],
   },
 ];
@@ -565,7 +565,7 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="fade-up relative my-12 w-full overflow-hidden md:my-16">
+      <section className="fade-up relative mt-12 mb-0 w-full overflow-hidden md:mt-16 md:mb-0">
         <img
           src="/images/construction-site-1.avif"
           alt="Construction site background"

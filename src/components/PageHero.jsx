@@ -1,7 +1,7 @@
 const PageHero = ({ title, description, background }) => {
   return (
     <section
-      className="relative flex min-h-[35vh] items-center justify-center overflow-hidden bg-brand text-white md:min-h-[45vh]"
+      className="relative flex min-h-[35vh] items-center justify-center overflow-hidden bg-brand pt-20 text-white md:min-h-[45vh] md:pt-24"
       style={
         background
           ? {
